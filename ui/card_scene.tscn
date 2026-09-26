@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ctilnrt1x68ma"]
+
+[ext_resource type="Script" uid="uid://cflwum1pahvey" path="res://ui/card_scene.gd" id="1_yssjy"]
+
+[node name="CardScene" type="Button" unique_id=1952804120]
+custom_minimum_size = Vector2(100, 150)
+custom_maximum_size = Vector2(100, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1046.0
+offset_bottom = -518.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yssjy")

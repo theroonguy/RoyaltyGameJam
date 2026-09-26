@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://muj7dnldfkoq"]
 
+[ext_resource type="PackedScene" uid="uid://dxni1mr7iaopm" path="res://ui/hand.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://c56pgefbn2nuw" path="res://ui/character_list.tscn" id="2_e2o6t"]
+
 [node name="game" type="Control" unique_id=1510045885]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Hand" parent="." unique_id=1505745457 instance=ExtResource("1_80nbo")]
+layout_mode = 1
+offset_top = 431.0
+
+[node name="CharacterList" parent="." unique_id=1744399672 instance=ExtResource("2_e2o6t")]
+layout_mode = 1
+offset_top = 27.0
+offset_bottom = -394.0
