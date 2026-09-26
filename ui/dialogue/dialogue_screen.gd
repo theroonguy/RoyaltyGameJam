@@ -11,7 +11,8 @@ func _ready() -> void:
 
 func start_dialogue():
 	if active_character:
-		active_character.dialogue_chain.run(active_character, self)
+		active_character.dialogue.ref = self  # allows resource to run timers
+		active_character.dialogue.run(active_character)
 		character.icon = active_character.pic
 
 func _on_stop():
@@ -22,6 +23,7 @@ func _on_screen_changed(screen: int) -> void:
 		show()
 	else:
 		hide()
+
 
 func _on_character_pressed() -> bool:
 	if not character:
