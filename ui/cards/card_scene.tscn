@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cflwum1pahvey" path="res://ui/cards/card_scene.gd" id="1_yssjy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu40k"]
+bg_color = Color(0.14044744, 0.14044747, 0.14044738, 1)
+
 [node name="CardScene" type="Button" unique_id=1952804120]
 custom_minimum_size = Vector2(100, 150)
 custom_maximum_size = Vector2(100, 150)
@@ -12,4 +15,5 @@ offset_right = -1046.0
 offset_bottom = -518.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_pu40k")
 script = ExtResource("1_yssjy")
