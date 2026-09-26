@@ -12,7 +12,8 @@ func _on_character_killed(character: Character) -> void:
 
 func refresh() -> void:
 	for child in get_children():
-		child.queue_free()
+		if child is Button:
+			child.queue_free()
 	
 	for character: Character in GameManager.characters:
 		var new_button = CHARACTER_BUTTON.instantiate()

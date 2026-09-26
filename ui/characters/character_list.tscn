@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c56pgefbn2nuw"]
 
-[ext_resource type="Script" uid="uid://coneko1iqfmhe" path="res://ui/character_list.gd" id="1_mj0st"]
+[ext_resource type="Script" uid="uid://coneko1iqfmhe" path="res://ui/characters/character_list.gd" id="1_mj0st"]
 [ext_resource type="Texture2D" uid="uid://j0kjmkm3df4l" path="res://assets/template1_mapdialogue1.png" id="2_cnqg3"]
 
 [node name="CharacterList" type="Control" unique_id=1744399672]
