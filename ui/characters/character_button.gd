@@ -4,6 +4,8 @@ var character: Character
 
 @onready var texture_rect: TextureRect = $TextureRect
 
+signal selected
+
 func _ready() -> void:
 	pressed.connect(select_character)
 	
@@ -30,11 +32,13 @@ func select_character() -> bool:
 		GameManager.use_card_on_character(GameManager.selected_card, character)
 		return true
 	
-	if character.dialogue_chain:
-		# if just selecting the character, open dialogue (for now)
-		character.dialogue_chain.run(character, self)
-		return true
+	#if character.dialogue_chain:
+		## if just selecting the character, open dialogue (for now)
+		#character.dialogue_chain.run(character, self)
+		#return true
 	
-	printerr("no action available")
+	selected.emit()
+	
+	#printerr("no action available")
 	
 	return true

@@ -1,6 +1,14 @@
 ## GAME MANAGER
 extends Node
 
+enum Screen {
+	MAP,
+	CHARACTERS,
+	DIALOGUE,
+}
+
+var current_screen: Screen = Screen.MAP
+
 # suspicion meter -- 0 to 1, 1 being fully suspicious
 var suspicion: float = 0.0
 
@@ -23,6 +31,8 @@ signal character_killed(character: Character)
 signal card_selected(card: Card)
 signal card_added_to_hand(card: Card)
 signal card_removed_from_hand(card: Card)
+
+signal screen_changed(screen: Screen)
 
 signal dialogue_written(text: String, character: Character)
 
@@ -83,6 +93,10 @@ func kill_character(character: Character) -> void:
 
 func write_dialogue(text: String, character: Character) -> void:
 	dialogue_written.emit(text, character)
+
+func change_screen(screen: Screen) -> void:
+	current_screen = screen
+	screen_changed.emit(screen)
 
 ########## UTILITY ##########
 
