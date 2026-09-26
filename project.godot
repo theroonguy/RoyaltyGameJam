@@ -14,3 +14,11 @@ config/name="RoyaltyGameJam"
 config/description="Enter an interesting project description here!"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.png"
+
+[autoload]
+
+GameManager="*uid://643kcoyd3gb"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
