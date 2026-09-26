@@ -1,5 +1,5 @@
 extends Resource
 class_name Dialogue
 
-func run() -> void:
+func run(character: Character) -> void:
 	pass

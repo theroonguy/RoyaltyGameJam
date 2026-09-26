@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hmtbkg5gav52"]
 
-[ext_resource type="Script" uid="uid://cewkbnbwevptj" path="res://ui/character_button.gd" id="1_crmbm"]
+[ext_resource type="Script" uid="uid://cewkbnbwevptj" path="res://ui/characters/character_button.gd" id="1_crmbm"]
 
 [node name="CharacterButton" type="Button" unique_id=1083688175]
 anchors_preset = 15
