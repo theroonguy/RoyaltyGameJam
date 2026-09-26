@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://hmtbkg5gav52"]
+
+[ext_resource type="Script" uid="uid://cewkbnbwevptj" path="res://ui/character_button.gd" id="1_crmbm"]
+
+[node name="CharacterButton" type="Button" unique_id=1083688175]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 516.0
+offset_top = 278.0
+offset_right = -516.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_crmbm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=651442963]
+layout_mode = 0
+offset_right = 118.0
+offset_bottom = 98.0
+expand_mode = 1
+stretch_mode = 5

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://daq1xwmqrlcjt"]
+
+[ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_1tr3f"]
+[ext_resource type="Texture2D" uid="uid://b5aqq0t3ognqx" path="res://characters/emperor/Emperor Default.png" id="1_hr512"]
+[ext_resource type="Script" uid="uid://c6unjfsym1itq" path="res://dialogue/dialogue.gd" id="1_yogio"]
+[ext_resource type="Resource" uid="uid://diy63ryrjj65u" path="res://cards/shaman.tres" id="2_1nsh7"]
+[ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="3_40exd"]
+[ext_resource type="Script" uid="uid://d2glkdgq6ax4f" path="res://dialogue/dialogue_chain.gd" id="4_hl8t6"]
+
+[sub_resource type="Resource" id="Resource_bjpx8"]
+script = ExtResource("3_40exd")
+card = ExtResource("2_1nsh7")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_yssjy"]
+script = ExtResource("4_hl8t6")
+dialogue = Array[ExtResource("1_yogio")]([SubResource("Resource_bjpx8")])
+metadata/_custom_type_script = "uid://d2glkdgq6ax4f"
+
+[resource]
+script = ExtResource("1_1tr3f")
+name = "Emperor"
+dialogue_chain = SubResource("Resource_yssjy")
+pic = ExtResource("1_hr512")
+metadata/_custom_type_script = "uid://hv71lve7e8qh"
