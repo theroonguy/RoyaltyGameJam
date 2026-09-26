@@ -35,3 +35,7 @@ func _on_selected(character: Character) -> void:
 	dialogue_screen.active_character = character
 	dialogue_screen.start_dialogue()
 	GameManager.change_screen(GameManager.Screen.DIALOGUE)
+
+
+func _on_go_back_button_pressed() -> void:
+	GameManager.change_screen(GameManager.Screen.MAP)
