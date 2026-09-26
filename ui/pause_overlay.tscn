@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b3t5rh15ebit1"]
+
+[ext_resource type="Script" uid="uid://br3bk04msf18t" path="res://ui/pause_overlay.gd" id="1_tg18y"]
+[ext_resource type="Texture2D" uid="uid://d1lsb31esy0tc" path="res://assets/template1_resumebutton1.png" id="2_hrvde"]
+[ext_resource type="Texture2D" uid="uid://b16eoxuy7pqjn" path="res://assets/template1_restartbutton1.png" id="3_rlipe"]
+[ext_resource type="Texture2D" uid="uid://cggmo2i24btmm" path="res://assets/template1_quitbutton1.png" id="4_rxijk"]
+[ext_resource type="Texture2D" uid="uid://cehagqtg6rsol" path="res://assets/template1_mainmenubutton1.png" id="5_jy7he"]
+
+[node name="PauseOverlay" type="CanvasLayer" unique_id=1581817510]
+script = ExtResource("1_tg18y")
+
+[node name="Container" type="PanelContainer" parent="." unique_id=1381648605]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=794020759]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ResumeButton" type="TextureButton" parent="Container/VBoxContainer" unique_id=6100720]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_hrvde")
+
+[node name="RestartButton" type="TextureButton" parent="Container/VBoxContainer" unique_id=287218704]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_rlipe")
+
+[node name="QuitButton" type="TextureButton" parent="Container/VBoxContainer" unique_id=1882613607]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_rxijk")
+
+[node name="MainMenuButton" type="TextureButton" parent="Container/VBoxContainer" unique_id=1535089504]
+layout_mode = 2
+texture_normal = ExtResource("5_jy7he")
+
+[connection signal="pressed" from="Container/VBoxContainer/ResumeButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_pressed"]

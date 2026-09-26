@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bn231i0ybjsg4"]
+
+[ext_resource type="Script" uid="uid://b4xlt5igibqba" path="res://ui/main_menu.gd" id="1_t7e0r"]
+[ext_resource type="Texture2D" uid="uid://dkmgxn1dj536b" path="res://assets/template1_mainmenu.png" id="2_8uxxo"]
+[ext_resource type="Texture2D" uid="uid://vkqifj3ug0j1" path="res://assets/template1_playbutton.png" id="2_rmr83"]
+[ext_resource type="Texture2D" uid="uid://b16eoxuy7pqjn" path="res://assets/template1_restartbutton1.png" id="3_8uxxo"]
+[ext_resource type="Texture2D" uid="uid://cggmo2i24btmm" path="res://assets/template1_quitbutton1.png" id="4_ei257"]
+
+[node name="MainMenu" type="Control" unique_id=976867942]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7e0r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509930028]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=802580443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8uxxo")
+
+[node name="Container" type="PanelContainer" parent="." unique_id=1771153939]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=93046967]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayButton" type="TextureButton" parent="Container/VBoxContainer" unique_id=1647273430]
+z_index = 3
+layout_mode = 2
+texture_normal = ExtResource("2_rmr83")
+
+[node name="RestartButton" type="TextureButton" parent="Container/VBoxContainer" unique_id=1653287534]
+z_index = 3
+layout_mode = 2
+texture_normal = ExtResource("3_8uxxo")
+
+[node name="QuitButton" type="TextureButton" parent="Container/VBoxContainer" unique_id=421566194]
+z_index = 3
+layout_mode = 2
+texture_normal = ExtResource("4_ei257")
