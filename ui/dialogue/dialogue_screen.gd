@@ -11,6 +11,10 @@ func _ready() -> void:
 
 func start_dialogue():
 	if active_character:
+		if not active_character.dialogue:
+			printerr("no dialogue assigned")
+			return
+		
 		active_character.dialogue.ref = self  # allows resource to run timers
 		active_character.dialogue.run(active_character)
 		character.icon = active_character.pic
