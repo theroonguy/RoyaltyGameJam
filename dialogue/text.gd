@@ -3,7 +3,5 @@ class_name Text
 
 @export_multiline() var text: String = ""
 
-func run(character: Character) -> void:
-	# TODO: display to screen
-	print(text)
+func _run(character: Character) -> void:
 	GameManager.write_dialogue(text, character)

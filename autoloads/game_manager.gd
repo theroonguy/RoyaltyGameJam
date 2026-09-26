@@ -35,6 +35,7 @@ signal card_removed_from_hand(card: Card)
 signal screen_changed(screen: Screen)
 
 signal dialogue_written(text: String, character: Character)
+signal dialogue_split(text1: String, option1: Dialogue, text2: String, option2: Dialogue, character: Character)
 
 func _ready() -> void:
 	var char_resources = get_all_resources_under("characters")
@@ -93,6 +94,9 @@ func kill_character(character: Character) -> void:
 
 func write_dialogue(text: String, character: Character) -> void:
 	dialogue_written.emit(text, character)
+
+func split_dialogue(text1: String, option1: Dialogue, text2: String, option2: Dialogue, character: Character) -> void:
+	dialogue_split.emit(text1, option1, text2, option2, character)
 
 func change_screen(screen: Screen) -> void:
 	current_screen = screen
