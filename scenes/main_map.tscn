@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://brd3gd2o0el3y" path="res://ui/dialogue/dialogue_screen.tscn" id="1_kdyc3"]
 [ext_resource type="PackedScene" uid="uid://c56pgefbn2nuw" path="res://ui/characters/character_list.tscn" id="2_eqscl"]
 [ext_resource type="PackedScene" uid="uid://b65wqix0x1nfk" path="res://ui/chart.tscn" id="2_uxg3y"]
+[ext_resource type="PackedScene" uid="uid://bldhxu8c4vlpu" path="res://ui/map.tscn" id="3_4synu"]
 [ext_resource type="PackedScene" uid="uid://duqcpdwcimgsb" path="res://ui/description.tscn" id="4_kdyc3"]
 
 [node name="MainMap" type="Control" unique_id=1064876462]
@@ -52,6 +53,10 @@ visible = false
 layout_mode = 2
 
 [node name="CharacterList" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1744399672 instance=ExtResource("2_eqscl")]
+visible = false
+layout_mode = 2
+
+[node name="Map" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=273734124 instance=ExtResource("3_4synu")]
 layout_mode = 2
 
 [node name="ChartContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1336517766]
