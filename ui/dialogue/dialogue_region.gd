@@ -11,6 +11,11 @@ func _ready() -> void:
 	GameManager.dialogue_written.connect(_on_dialogue_write)
 	GameManager.dialogue_split.connect(_on_split_dialogue)
 
+func clear() -> void:
+	num_messages = 0
+	for child in get_children():
+		child.queue_free()
+
 func _on_dialogue_write(text: String, character: Character) -> void:
 	var new_dialogue = DIALOGUE_BOX.instantiate()
 	new_dialogue.position.y = num_messages * 50.0

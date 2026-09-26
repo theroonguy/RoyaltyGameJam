@@ -1,12 +1,12 @@
 ## GAME MANAGER
 extends Node
 
+# SCREEN - clarifies which screen is shown out of map, characters and dialogue
 enum Screen {
 	MAP,
 	CHARACTERS,
 	DIALOGUE,
 }
-
 var current_screen: Screen = Screen.MAP
 
 # suspicion meter -- 0 to 1, 1 being fully suspicious
@@ -56,7 +56,6 @@ func _ready() -> void:
 
 func form_relationships() -> void:
 	for my_char in characters:
-		print(my_char)
 		relationships[my_char] = {}
 		# for every character, evaluate relationship with every other character
 		for other_char in characters:
@@ -66,14 +65,11 @@ func form_relationships() -> void:
 				continue
 			
 			relationships[my_char][other_char] = randf_range(0.0, 1.0)
-	
-	print(relationships)
 
 func add_card_to_hand(card: Card) -> void:
 	hand.append(card)
 	card_added_to_hand.emit(card)
 	print("card added to hand: " + card.name)
-	print(hand)
 
 func use_card_on_character(card: Card, character: Character) -> void:
 	# TODO: base on character what will happen based on card

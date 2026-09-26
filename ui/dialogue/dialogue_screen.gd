@@ -4,6 +4,8 @@ var active_character: Character
 @onready var stop: Button = $HSplitContainer/VBoxContainer/MarginContainer/Stop
 @onready var character: Button = %Character
 
+@onready var dialogue_region: Control = %DialogueRegion
+
 func _ready() -> void:
 	stop.pressed.connect(_on_stop)
 	GameManager.screen_changed.connect(_on_screen_changed)
@@ -15,6 +17,7 @@ func start_dialogue():
 			printerr("no dialogue assigned")
 			return
 		
+		dialogue_region.clear()
 		active_character.dialogue.ref = self  # allows resource to run timers
 		active_character.dialogue.run(active_character)
 		character.icon = active_character.pic
