@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b813cjk5idk6h"
-path="res://.godot/imported/template1_cardhands1.png-fc209085b00b0b74e10221a2e3fa68b9.ctex"
+uid="uid://bxxtvj75ejqaf"
+path="res://.godot/imported/template1_outerpalacetext.png-e7003ddf4c24906ba397e832f5fe351d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/template1_cardhands1.png"
-dest_files=["res://.godot/imported/template1_cardhands1.png-fc209085b00b0b74e10221a2e3fa68b9.ctex"]
+source_file="res://assets/temp_assets/template1_outerpalacetext.png"
+dest_files=["res://.godot/imported/template1_outerpalacetext.png-e7003ddf4c24906ba397e832f5fe351d.ctex"]
 
 [params]
 
