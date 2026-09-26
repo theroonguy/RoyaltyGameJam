@@ -13,11 +13,13 @@ func card_added(_card: Card) -> void:
 
 func refresh() -> void:
 	for child in get_children():
-		child.queue_free()
+		if child is Button:
+			child.queue_free()
 	
 	for i in range(len(GameManager.hand)):
 		var card = GameManager.hand[i]
 		var new_card = CARD_SCENE.instantiate()
+		new_card.position.y = -size.y
 		new_card.position.x = i * 120.0
 		new_card.text = card.name
 		new_card.card = card

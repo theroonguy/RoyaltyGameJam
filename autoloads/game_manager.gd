@@ -1,6 +1,14 @@
 ## GAME MANAGER
 extends Node
 
+enum Screen {
+	MAP,
+	CHARACTERS,
+	DIALOGUE,
+}
+
+var current_screen: Screen = Screen.MAP
+
 # suspicion meter -- 0 to 1, 1 being fully suspicious
 var suspicion: float = 0.0
 
@@ -19,9 +27,14 @@ var selected_card: Card = null:
 		
 		card_selected.emit(new_card)
 
+signal character_killed(character: Character)
 signal card_selected(card: Card)
 signal card_added_to_hand(card: Card)
 signal card_removed_from_hand(card: Card)
+
+signal screen_changed(screen: Screen)
+
+signal dialogue_written(text: String, character: Character)
 
 func _ready() -> void:
 	var char_resources = get_all_resources_under("characters")
@@ -33,6 +46,8 @@ func _ready() -> void:
 	for res in card_resources:
 		if res is Card:
 			cards.append(res)
+	
+	add_card_to_hand(preload("res://cards/poison.tres"))
 	
 	form_relationships()
 
@@ -63,7 +78,25 @@ func use_card_on_character(card: Card, character: Character) -> void:
 	# TODO: base on character what will happen based on card
 	selected_card = null
 	print(card.name + " used on character: " + character.name)
-	pass
+	
+	match card.name:
+		"Poison":
+			kill_character(character)
+	
+	hand.erase(card)
+	card_removed_from_hand.emit(card)
+
+func kill_character(character: Character) -> void:
+	characters.erase(character)
+	print("Character " + character.name + " has been killed!")
+	character_killed.emit(character)
+
+func write_dialogue(text: String, character: Character) -> void:
+	dialogue_written.emit(text, character)
+
+func change_screen(screen: Screen) -> void:
+	current_screen = screen
+	screen_changed.emit(screen)
 
 ########## UTILITY ##########
 

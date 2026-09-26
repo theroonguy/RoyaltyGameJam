@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c6unjfsym1itq" path="res://dialogue/dialogue.gd" id="1_yogio"]
 [ext_resource type="Resource" uid="uid://diy63ryrjj65u" path="res://cards/shaman.tres" id="2_1nsh7"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="3_40exd"]
+[ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="4_1nsh7"]
 [ext_resource type="Script" uid="uid://d2glkdgq6ax4f" path="res://dialogue/dialogue_chain.gd" id="4_hl8t6"]
 
 [sub_resource type="Resource" id="Resource_bjpx8"]
@@ -12,9 +13,24 @@ script = ExtResource("3_40exd")
 card = ExtResource("2_1nsh7")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
+[sub_resource type="Resource" id="Resource_uxg3y"]
+script = ExtResource("4_1nsh7")
+text = "he says this thin!"
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_xf2wg"]
+script = ExtResource("4_1nsh7")
+text = "asdasdasd"
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_p0vhc"]
+script = ExtResource("4_1nsh7")
+text = "asdasdasdasdasda"
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
 [sub_resource type="Resource" id="Resource_yssjy"]
 script = ExtResource("4_hl8t6")
-dialogue = Array[ExtResource("1_yogio")]([SubResource("Resource_bjpx8")])
+dialogue = Array[ExtResource("1_yogio")]([SubResource("Resource_bjpx8"), SubResource("Resource_uxg3y"), SubResource("Resource_xf2wg"), SubResource("Resource_p0vhc")])
 metadata/_custom_type_script = "uid://d2glkdgq6ax4f"
 
 [resource]

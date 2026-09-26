@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dqdw3onuhrcmi"]
 
-[ext_resource type="PackedScene" uid="uid://dxni1mr7iaopm" path="res://ui/hand.tscn" id="1_1xo34"]
-[ext_resource type="PackedScene" uid="uid://c56pgefbn2nuw" path="res://ui/character_list.tscn" id="2_eqscl"]
+[ext_resource type="PackedScene" uid="uid://dxni1mr7iaopm" path="res://ui/cards/hand.tscn" id="1_1xo34"]
+[ext_resource type="PackedScene" uid="uid://brd3gd2o0el3y" path="res://ui/dialogue/dialogue_screen.tscn" id="1_kdyc3"]
+[ext_resource type="PackedScene" uid="uid://c56pgefbn2nuw" path="res://ui/characters/character_list.tscn" id="2_eqscl"]
 [ext_resource type="PackedScene" uid="uid://b65wqix0x1nfk" path="res://ui/chart.tscn" id="2_uxg3y"]
 [ext_resource type="PackedScene" uid="uid://duqcpdwcimgsb" path="res://ui/description.tscn" id="4_kdyc3"]
 
@@ -46,12 +47,12 @@ theme_override_constants/separation = 50
 custom_minimum_size = Vector2(700, 450)
 layout_mode = 2
 
-[node name="CharacterList" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1744399672 instance=ExtResource("2_eqscl")]
+[node name="DialogueScreen" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1329811230 instance=ExtResource("1_kdyc3")]
+visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=709211248]
+[node name="CharacterList" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1744399672 instance=ExtResource("2_eqscl")]
 layout_mode = 2
-text = "map&dialoguebox"
 
 [node name="ChartContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1336517766]
 custom_minimum_size = Vector2(350, 450)
@@ -77,10 +78,6 @@ layout_mode = 2
 
 [node name="Hand" parent="MarginContainer/VBoxContainer/HBoxContainer2/HandsContainer" unique_id=1505745457 instance=ExtResource("1_1xo34")]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HandsContainer" unique_id=623447534]
-layout_mode = 2
-text = "card hands "
 
 [node name="DescriptionContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=841123541]
 custom_minimum_size = Vector2(350, 100)
