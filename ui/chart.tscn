@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b65wqix0x1nfk"]
+
+[ext_resource type="Texture2D" uid="uid://b55nn565lccc5" path="res://assets/template1_chart1.png" id="1_vxmkm"]
+
+[node name="Chart" type="Control" unique_id=59958713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1017940880]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vxmkm")

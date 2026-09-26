@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dqdw3onuhrcmi"]
 
-[ext_resource type="PackedScene" uid="uid://dxni1mr7iaopm" path="res://ui/cards/hand.tscn" id="1_1xo34"]
-[ext_resource type="PackedScene" uid="uid://c56pgefbn2nuw" path="res://ui/characters/character_list.tscn" id="2_eqscl"]
-[ext_resource type="PackedScene" uid="uid://dd2qq428tyqe0" path="res://ui/dialogue/dialogue_region.tscn" id="3_eqscl"]
+[ext_resource type="PackedScene" uid="uid://dxni1mr7iaopm" path="res://ui/hand.tscn" id="1_1xo34"]
+[ext_resource type="PackedScene" uid="uid://c56pgefbn2nuw" path="res://ui/character_list.tscn" id="2_eqscl"]
+[ext_resource type="PackedScene" uid="uid://b65wqix0x1nfk" path="res://ui/chart.tscn" id="2_uxg3y"]
+[ext_resource type="PackedScene" uid="uid://duqcpdwcimgsb" path="res://ui/description.tscn" id="4_kdyc3"]
 
 [node name="MainMap" type="Control" unique_id=1064876462]
 layout_mode = 3
@@ -12,15 +13,82 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Hand" parent="." unique_id=1505745457 instance=ExtResource("1_1xo34")]
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1915707387]
 layout_mode = 1
-offset_top = 431.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CharacterList" parent="." unique_id=1744399672 instance=ExtResource("2_eqscl")]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1351810762]
 layout_mode = 1
-offset_top = 27.0
-offset_bottom = -394.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 
-[node name="DialogueRegion" parent="." unique_id=479531730 instance=ExtResource("3_eqscl")]
-layout_mode = 1
-offset_left = 826.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=315080501]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1839213145]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 50
+
+[node name="MapContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=738280988]
+custom_minimum_size = Vector2(700, 450)
+layout_mode = 2
+
+[node name="CharacterList" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1744399672 instance=ExtResource("2_eqscl")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=709211248]
+layout_mode = 2
+text = "map&dialoguebox"
+
+[node name="ChartContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1336517766]
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Chart" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ChartContainer" unique_id=358690470]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Chart"
+horizontal_alignment = 2
+
+[node name="Chart2" parent="MarginContainer/VBoxContainer/HBoxContainer/ChartContainer" unique_id=59958713 instance=ExtResource("2_uxg3y")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=213884702]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HandsContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=349062188]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 2
+
+[node name="Hand" parent="MarginContainer/VBoxContainer/HBoxContainer2/HandsContainer" unique_id=1505745457 instance=ExtResource("1_1xo34")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/HandsContainer" unique_id=623447534]
+layout_mode = 2
+text = "card hands "
+
+[node name="DescriptionContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=841123541]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/DescriptionContainer" unique_id=1749356856]
+layout_mode = 2
+text = "Description"
+
+[node name="Description" parent="MarginContainer/VBoxContainer/HBoxContainer2/DescriptionContainer" unique_id=1698845075 instance=ExtResource("4_kdyc3")]
+layout_mode = 2
