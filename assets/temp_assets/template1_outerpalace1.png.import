@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b16eoxuy7pqjn"
-path="res://.godot/imported/template1_restartbutton1.png-04481e20b1ce90fb52c6e9f0c9536752.ctex"
+uid="uid://lpanrs7s2c27"
+path="res://.godot/imported/template1_outerpalace1.png-4c8bbe1bb163a8eed67f5c074c7d7257.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/template1_restartbutton1.png"
-dest_files=["res://.godot/imported/template1_restartbutton1.png-04481e20b1ce90fb52c6e9f0c9536752.ctex"]
+source_file="res://assets/temp_assets/template1_outerpalace1.png"
+dest_files=["res://.godot/imported/template1_outerpalace1.png-4c8bbe1bb163a8eed67f5c074c7d7257.ctex"]
 
 [params]
 

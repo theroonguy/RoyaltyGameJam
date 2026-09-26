@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bn231i0ybjsg4"]
 
 [ext_resource type="Script" uid="uid://b4xlt5igibqba" path="res://ui/main_menu.gd" id="1_t7e0r"]
-[ext_resource type="Texture2D" uid="uid://dkmgxn1dj536b" path="res://assets/template1_mainmenu.png" id="2_8uxxo"]
-[ext_resource type="Texture2D" uid="uid://vkqifj3ug0j1" path="res://assets/template1_playbutton.png" id="2_rmr83"]
-[ext_resource type="Texture2D" uid="uid://b16eoxuy7pqjn" path="res://assets/template1_restartbutton1.png" id="3_8uxxo"]
-[ext_resource type="Texture2D" uid="uid://cggmo2i24btmm" path="res://assets/template1_quitbutton1.png" id="4_ei257"]
+[ext_resource type="Texture2D" uid="uid://dkmgxn1dj536b" path="res://assets/temp_assets/template1_mainmenu.png" id="2_8uxxo"]
+[ext_resource type="Texture2D" uid="uid://vkqifj3ug0j1" path="res://assets/temp_assets/template1_playbutton.png" id="2_rmr83"]
+[ext_resource type="Texture2D" uid="uid://b16eoxuy7pqjn" path="res://assets/temp_assets/template1_restartbutton1.png" id="3_8uxxo"]
+[ext_resource type="Texture2D" uid="uid://cggmo2i24btmm" path="res://assets/temp_assets/template1_quitbutton1.png" id="4_ei257"]
 
 [node name="MainMenu" type="Control" unique_id=976867942]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b65wqix0x1nfk"]
 
-[ext_resource type="Texture2D" uid="uid://b55nn565lccc5" path="res://assets/template1_chart1.png" id="1_vxmkm"]
+[ext_resource type="Texture2D" uid="uid://b55nn565lccc5" path="res://assets/temp_assets/template1_chart1.png" id="1_vxmkm"]
 
 [node name="Chart" type="Control" unique_id=59958713]
 layout_mode = 3

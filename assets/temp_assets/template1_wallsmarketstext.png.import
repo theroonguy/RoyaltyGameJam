@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cehagqtg6rsol"
-path="res://.godot/imported/template1_mainmenubutton1.png-124e508e38b2565f518d9e7fb826cc30.ctex"
+uid="uid://clh56s3bh3tcn"
+path="res://.godot/imported/template1_wallsmarketstext.png-9e044ace119bc9d55822a1432dfd1a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/template1_mainmenubutton1.png"
-dest_files=["res://.godot/imported/template1_mainmenubutton1.png-124e508e38b2565f518d9e7fb826cc30.ctex"]
+source_file="res://assets/temp_assets/template1_wallsmarketstext.png"
+dest_files=["res://.godot/imported/template1_wallsmarketstext.png-9e044ace119bc9d55822a1432dfd1a65.ctex"]
 
 [params]
 
