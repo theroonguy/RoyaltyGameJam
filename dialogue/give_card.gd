@@ -3,7 +3,7 @@ class_name GiveCard
 
 @export var card: Card
 
-func run() -> void:
+func run(character: Character) -> void:
 	if not card:
 		printerr("No card selected")
 	

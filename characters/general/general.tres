@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://dnmbpbshgh4ea"]
+
+[ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_004gg"]
+[ext_resource type="Script" uid="uid://c6unjfsym1itq" path="res://dialogue/dialogue.gd" id="1_sic06"]
+[ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_buo7l"]
+[ext_resource type="Script" uid="uid://d2glkdgq6ax4f" path="res://dialogue/dialogue_chain.gd" id="3_8tmwt"]
+[ext_resource type="Texture2D" uid="uid://b5yq1ukc7ug5x" path="res://characters/general/General Default.png" id="4_diayr"]
+
+[sub_resource type="Resource" id="Resource_2puif"]
+script = ExtResource("2_buo7l")
+text = "boohoo"
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_pjj75"]
+script = ExtResource("3_8tmwt")
+dialogue = Array[ExtResource("1_sic06")]([SubResource("Resource_2puif")])
+metadata/_custom_type_script = "uid://d2glkdgq6ax4f"
+
+[resource]
+script = ExtResource("1_004gg")
+name = "General"
+dialogue_chain = SubResource("Resource_pjj75")
+pic = ExtResource("4_diayr")
+metadata/_custom_type_script = "uid://hv71lve7e8qh"

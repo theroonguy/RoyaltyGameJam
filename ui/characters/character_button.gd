@@ -32,7 +32,7 @@ func select_character() -> bool:
 	
 	if character.dialogue_chain:
 		# if just selecting the character, open dialogue (for now)
-		character.dialogue_chain.run()
+		character.dialogue_chain.run(character, self)
 		return true
 	
 	printerr("no action available")
