@@ -16,6 +16,7 @@ func refresh() -> void:
 		if child is Button:
 			child.queue_free()
 	
+	
 	for i in range(len(GameManager.hand)):
 		var card = GameManager.hand[i]
 		var new_card = CARD_SCENE.instantiate()

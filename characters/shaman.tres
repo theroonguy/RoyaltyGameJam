@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Character" format=3 uid="uid://clh51es2x3qtw"]
-
-[ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_x74d4"]
-
-[resource]
-script = ExtResource("1_x74d4")
-name = "Shaman"
-metadata/_custom_type_script = "uid://hv71lve7e8qh"
