@@ -6,6 +6,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ylsh"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3gd0"]
+bg_color = Color(0.059125945, 0.059125952, 0.059125893, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ylsh"]
+font = ExtResource("3_rmr83")
+font_size = 28
+
 [node name="MainMenu" type="Control" unique_id=976867942]
 layout_mode = 3
 anchors_preset = 15
@@ -14,6 +25,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7e0r")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1020400375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11119685, 0.11119684, 0.11119684, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509930028]
 
@@ -33,6 +53,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 134.0
 offset_right = -458.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -50,6 +71,7 @@ custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rmr83")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_a3gd0")
 text = "Play"
 
 [node name="QuitButton" type="Button" parent="Container/VBoxContainer" unique_id=1886610685]
@@ -58,5 +80,16 @@ custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_rmr83")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_a3gd0")
 text = "Quit
 "
+
+[node name="Label" type="Label" parent="." unique_id=1742828901]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 358.0
+offset_right = 745.0
+offset_bottom = 514.0
+text = "by Haroon Amanullah, Lea Nagy, Shelley Ma, and Andie"
+label_settings = SubResource("LabelSettings_4ylsh")
+autowrap_mode = 3

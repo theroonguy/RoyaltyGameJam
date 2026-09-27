@@ -168,57 +168,63 @@ func kill_player(text: String) -> void:
 
 ## Recursively finds and loads resources from a given directory path.
 ## [param path] The directory to search (e.g., "res://assets/items/")
-## [param type_filter] Optional built-in or custom class name to filter by (e.g., "Texture2D" or "ItemData")
-func get_all_resources_under(path: String, type_filter: String = "") -> Array[Resource]:
+## [param type_filter] Optional custom script object or built-in class name to filter by.
+func get_all_resources_under(path: String, type_filter: Variant = null) -> Array[Resource]:
 	var resources: Array[Resource] = []
 	
-	# Open the directory
 	var dir = DirAccess.open(path)
 	if not dir:
 		push_error("Failed to open directory: " + path)
 		return resources
 
-	# Start reading contents
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 
 	while file_name != "":
 		if dir.current_is_dir():
-			# Ignore self and parent navigation links
 			if file_name != "." and file_name != "..":
-				# Recursively explore subfolders
 				var subfolder_path = path.path_join(file_name)
 				resources.append_array(get_all_resources_under(subfolder_path, type_filter))
 		else:
-			# Handle export engine behavior (.remap and .import files)
-			var original_file_name = file_name
-			if original_file_name.ends_with(".remap"):
-				original_file_name = original_file_name.trim_suffix(".remap")
-			elif original_file_name.ends_with(".import"):
-				original_file_name = original_file_name.trim_suffix(".import")
+			# Handle Godot export file remapping (.import / .remap)
+			var real_file_name = file_name
+			if real_file_name.ends_with(".remap"):
+				real_file_name = real_file_name.trim_suffix(".remap")
+			elif real_file_name.ends_with(".import"):
+				real_file_name = real_file_name.trim_suffix(".import")
 			
-			# Filter out actual .import setting files to avoid double processing
-			if file_name.ends_with(".import") and not original_file_name.ends_with(".tres") and not original_file_name.ends_with(".res"):
-				# If it's a raw asset (like PNG/WAV), keeping the clean suffix allows load() to work
-				pass 
-
-			var file_path = path.path_join(original_file_name)
+			var file_path = path.path_join(real_file_name)
 			
-			# Load the resource if it hasn't been added yet
 			if ResourceLoader.exists(file_path):
 				var res = ResourceLoader.load(file_path)
-				if res:
-					# Check if a type filter was specified and matches
-					if type_filter == "" or res.is_class(type_filter) or res.get_script() and res.get_script().get_instance_base_type() == type_filter:
-						# Extra check if filtering by a custom class name
-						if type_filter == "" or res.is_class(type_filter) or (res.get_class() == "Resource" and res.get_script() and type_filter in str(res.get_script().get_path())):
-							if not resources.has(res):
-								resources.append(res)
+				if res and _matches_filter(res, type_filter):
+					if not resources.has(res):
+						resources.append(res)
 
 		file_name = dir.get_next()
 		
 	dir.list_dir_end()
 	return resources
+
+
+func _matches_filter(res: Resource, filter: Variant) -> bool:
+	if filter == null or (filter is String and filter.strip_edges() == ""):
+		return true
+		
+	# If filter is a Script (e.g. ItemData class reference)
+	if filter is Script:
+		return is_instance_of(res, filter)
+		
+	# If filter is a String (e.g. "Texture2D" or "ItemData")
+	if filter is String:
+		if res.is_class(filter):
+			return true
+		var script = res.get_script() as Script
+		if script:
+			# Check global class_name
+			return script.get_global_name() == filter
+			
+	return false
 
 
 # - - - - - stuff regarding pausing and main menu stuffs 

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="2_2iue6"]
 [ext_resource type="Texture2D" uid="uid://mk4dt82qvnp1" path="res://assets/temp_assets/template1_palace2.png" id="3_m8udb"]
 [ext_resource type="Texture2D" uid="uid://lpanrs7s2c27" path="res://assets/temp_assets/template1_outerpalace1.png" id="4_7xb7k"]
+[ext_resource type="Texture2D" uid="uid://v8f7ituu6tyd" path="res://assets/Background.png" id="4_o4453"]
 [ext_resource type="Texture2D" uid="uid://3tny6gyx1mrx" path="res://assets/temp_assets/template1_outerpalace2.png" id="5_dc1eh"]
 [ext_resource type="Texture2D" uid="uid://c6krkbpj6iol3" path="res://assets/temp_assets/template1_wallsmarkets1.png" id="6_dc1eh"]
 [ext_resource type="Texture2D" uid="uid://cjb0c0kn7efu1" path="res://assets/temp_assets/template1_wallsmarkets2.png" id="7_cjqc2"]
@@ -18,8 +19,6 @@
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="15_ing14"]
 [ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="15_xhnjx"]
 [ext_resource type="Resource" uid="uid://bvsj35o47f42i" path="res://cards/cheaper_salt_rumor.tres" id="17_xhnjx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rbrh"]
 
 [sub_resource type="Resource" id="Resource_8u10w"]
 script = ExtResource("14_ing14")
@@ -82,7 +81,20 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
+[node name="MapBackground2" type="TextureRect" parent="." unique_id=1002151416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.77
+offset_right = -32.22998
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_o4453")
+stretch_mode = 6
+
 [node name="MapBackground" type="TextureRect" parent="." unique_id=640705115]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,87 +103,65 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_uv4r8")
 
-[node name="MarginContainer" type="MarginContainer" parent="MapBackground" unique_id=1580100704]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
-
-[node name="PanelContainer" type="PanelContainer" parent="MapBackground/MarginContainer" unique_id=701460967]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, -100)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_5rbrh")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MapBackground/MarginContainer/PanelContainer" unique_id=666042759]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer" unique_id=701287454]
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 50)
-theme_override_constants/separation = 50
-
-[node name="PalaceButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1750157170]
-layout_mode = 2
+[node name="PalaceButton" type="TextureButton" parent="." unique_id=1750157170]
+layout_mode = 0
+offset_left = 775.0
+offset_top = 249.0
+offset_right = 925.0
+offset_bottom = 399.0
 tooltip_text = "The Palace"
 texture_normal = ExtResource("2_1k2ba")
 texture_hover = ExtResource("3_m8udb")
 
-[node name="OuterPalaceButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=648927663]
-layout_mode = 2
+[node name="OuterPalaceButton" type="TextureButton" parent="." unique_id=648927663]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 323.0
+offset_right = 423.0
+offset_bottom = 473.0
 tooltip_text = "The Outer Courts"
 texture_normal = ExtResource("4_7xb7k")
 texture_hover = ExtResource("5_dc1eh")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer" unique_id=1537322380]
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 100)
-theme_override_constants/separation = 120
-
-[node name="WallsButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=780363]
-layout_mode = 2
+[node name="WallsButton" type="TextureButton" parent="." unique_id=780363]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 474.0
+offset_right = 251.0
+offset_bottom = 624.0
 tooltip_text = "The Outer Walls"
 texture_normal = ExtResource("6_dc1eh")
 texture_hover = ExtResource("7_cjqc2")
 
-[node name="MountainsButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1630737459]
-layout_mode = 2
+[node name="MountainsButton" type="TextureButton" parent="." unique_id=1630737459]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 114.0
+offset_right = 319.0
+offset_bottom = 264.0
 tooltip_text = "The Mountainside"
 texture_normal = ExtResource("8_0p7vj")
 texture_hover = ExtResource("9_em20l")
 
 [node name="Event" parent="." unique_id=607618099 instance=ExtResource("12_uscng")]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 625.0
-offset_right = 336.0
-offset_bottom = 657.0
+offset_left = 309.0
+offset_top = 562.0
+offset_right = 433.0
+offset_bottom = 594.0
 text = "Wooden Barrel"
 dialogue = SubResource("Resource_8u10w")
 
 [node name="Event2" parent="." unique_id=435566146 instance=ExtResource("12_uscng")]
 layout_mode = 0
-offset_left = 767.0
-offset_top = 411.0
-offset_right = 879.0
-offset_bottom = 443.0
+offset_left = 632.0
+offset_top = 519.0
+offset_right = 744.0
+offset_bottom = 551.0
 text = "Rumor"
 dialogue = SubResource("Resource_lihmg")
 
-[connection signal="pressed" from="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PalaceButton" to="." method="_on_palace_button_pressed"]
-[connection signal="pressed" from="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/OuterPalaceButton" to="." method="_on_outer_palace_button_pressed"]
-[connection signal="pressed" from="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/WallsButton" to="." method="_on_walls_button_pressed"]
-[connection signal="pressed" from="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/MountainsButton" to="." method="_on_mountains_button_pressed"]
+[connection signal="pressed" from="PalaceButton" to="." method="_on_palace_button_pressed"]
+[connection signal="pressed" from="OuterPalaceButton" to="." method="_on_outer_palace_button_pressed"]
+[connection signal="pressed" from="WallsButton" to="." method="_on_walls_button_pressed"]
+[connection signal="pressed" from="MountainsButton" to="." method="_on_mountains_button_pressed"]
