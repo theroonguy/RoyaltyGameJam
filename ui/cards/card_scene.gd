@@ -10,7 +10,7 @@ var highlighted
 var counter: float
 
 func _ready() -> void:
-	pressed.connect(select_card)
+	pressed.connect(_on_pressed) # select vs deselect a;sdjfa;lsdfjk
 	
 	for character in GameManager.characters:
 		if character.name == card.name:
@@ -28,6 +28,12 @@ func _process(delta: float) -> void:
 	
 	counter += delta
 	modulate.g = remap(sin(counter), -1.0, 1.0, 1.0, 1.5)
+
+func _on_pressed() -> void:
+	if GameManager.selected_card == card:
+		deselect_card() # if this card is already selected, clicking it again deselects it
+	else:
+		select_card()
 
 func select_card() -> void:
 	if not card:
@@ -49,6 +55,12 @@ func select_card() -> void:
 	await tween.finished
 	
 	GameManager.card_animation_finished.emit()
+
+func deselect_card() -> void:
+	GameManager.selected_card = null
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.1)
+	print("deselected card: " + card.name)
 
 func _on_mouse_entered() -> void:
 	var tween = create_tween()
