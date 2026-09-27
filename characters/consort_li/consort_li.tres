@@ -1,28 +1,55 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://dw5sshfv22okn"]
 
-[ext_resource type="Texture2D" uid="uid://ccwnu8cnoyrvj" path="res://characters/consort_li/Consort Li Default.png" id="1_g0bqd"]
+[ext_resource type="Resource" uid="uid://c6vow8id0onyo" path="res://cards/consort_li.tres" id="1_466ta"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_hv7p1"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_42yqo"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="3_fatta"]
 [ext_resource type="Resource" uid="uid://dqphn3vvr8i3m" path="res://cards/letter.tres" id="4_1y3fh"]
+[ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="4_cnw7j"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="6_cnw7j"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="7_466ta"]
+[ext_resource type="Texture2D" uid="uid://g2xlkm2uvjho" path="res://characters/consort_li/Consort Li Happy.png" id="8_r3q08"]
 
-[sub_resource type="Resource" id="Resource_7e608"]
+[sub_resource type="Resource" id="Resource_x1hd4"]
+script = ExtResource("4_cnw7j")
+card = ExtResource("1_466ta")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_hamqk"]
 script = ExtResource("2_42yqo")
-text = "Ah, no need to bother with conversation, then. Go off now!"
+text = "Well, what a busy little fox you are. The information is much appreciated!"
+next = SubResource("Resource_x1hd4")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
-[sub_resource type="Resource" id="Resource_hfcja"]
+[sub_resource type="Resource" id="Resource_4ivqm"]
+script = ExtResource("6_cnw7j")
+text = "You tell her of the general's operation. "
+next = SubResource("Resource_hamqk")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_kq8pr"]
+script = ExtResource("2_42yqo")
+text = "No matter. Do tell."
+next = SubResource("Resource_4ivqm")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_s7kk3"]
+script = ExtResource("2_42yqo")
+text = "Ah, that’s unfortunate. Well, the Empress has been rather shaken up."
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_wglyx"]
 script = ExtResource("3_fatta")
-text1 = "No, I'm just passing through."
-option1 = SubResource("Resource_7e608")
-text2 = "hhhh"
+text1 = "Not of the relationship kind, unfortunately."
+option1 = SubResource("Resource_kq8pr")
+text2 = "No, not at this point. Apologies."
+option2 = SubResource("Resource_s7kk3")
 metadata/_custom_type_script = "uid://uc8ep36gysp7"
 
-[sub_resource type="Resource" id="Resource_1umrq"]
+[sub_resource type="Resource" id="Resource_qvojs"]
 script = ExtResource("2_42yqo")
-text = "A new face... how interesting. Are you a new maid?"
-next = SubResource("Resource_hfcja")
+text = "Oh! You're back! Any more gossip for me? "
+next = SubResource("Resource_wglyx")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_t86mh"]
@@ -39,7 +66,7 @@ metadata/_custom_type_script = "uid://dxba5rqbtyoxw"
 [resource]
 script = ExtResource("1_hv7p1")
 name = "Consort Li"
-dialogue = SubResource("Resource_1umrq")
-pic = ExtResource("1_g0bqd")
+dialogue2 = SubResource("Resource_qvojs")
+pic = ExtResource("8_r3q08")
 interactions = Array[ExtResource("7_466ta")]([SubResource("Resource_xck2r")])
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

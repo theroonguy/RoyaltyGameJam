@@ -2,12 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="1_445km"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_qbjue"]
-[ext_resource type="Script" uid="uid://c803clvbsiok0" path="res://dialogue/influence.gd" id="2_0p6c4"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="3_d6nw8"]
-[ext_resource type="Resource" uid="uid://cswnvcge8xdi5" path="res://cards/guard.tres" id="3_fs7od"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="4_fs7od"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="4_qdsct"]
-[ext_resource type="Script" uid="uid://07wi776s8fse" path="res://dialogue/allow_back.gd" id="5_rxoyn"]
 [ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="8_1b0bc"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="8_ys5p2"]
 [ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="9_dyyyk"]
@@ -18,38 +15,14 @@
 script = ExtResource("1_445km")
 metadata/_custom_type_script = "uid://cqduvc147h3nv"
 
-[sub_resource type="Resource" id="Resource_d6nw8"]
-script = ExtResource("1_445km")
-text = "die."
-metadata/_custom_type_script = "uid://cqduvc147h3nv"
-
-[sub_resource type="Resource" id="Resource_ulx81"]
-script = ExtResource("4_qdsct")
-card = ExtResource("3_fs7od")
-metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
-
-[sub_resource type="Resource" id="Resource_2xk3c"]
-script = ExtResource("5_rxoyn")
-screen = 6
-next = SubResource("Resource_ulx81")
-metadata/_custom_type_script = "uid://07wi776s8fse"
-
-[sub_resource type="Resource" id="Resource_0p6c4"]
-script = ExtResource("3_d6nw8")
-text = "I wish you well on your path forward."
-next = SubResource("Resource_2xk3c")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_445km"]
-script = ExtResource("2_0p6c4")
-success = SubResource("Resource_0p6c4")
-failure = SubResource("Resource_d6nw8")
-metadata/_custom_type_script = "uid://c803clvbsiok0"
+[sub_resource type="Resource" id="Resource_r3q08"]
+script = ExtResource("4_fs7od")
+text1 = "I was given a mission by Lin Lingsu, the Taoist Sorcerer of the Mountains. I must deliver a message to a friend of a neighboring kingdom."
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
 
 [sub_resource type="Resource" id="Resource_56nqc"]
 script = ExtResource("3_d6nw8")
-text = "And what is the nature of your journey?"
-next = SubResource("Resource_445km")
+next = SubResource("Resource_r3q08")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_j3fuk"]
