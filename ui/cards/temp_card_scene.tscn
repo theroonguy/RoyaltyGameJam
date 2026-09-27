@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://csjlnkcw71unp"]
+
+[ext_resource type="Texture2D" path="res://assets/temp_assets/template1_card2.png" id="1_tyy7e"]
+[ext_resource type="Script" path="res://ui/cards/temp_card_scene.gd" id="2_glfjp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5rbrh"]
+texture = ExtResource("1_tyy7e")
+
+[node name="CardScene" type="Panel" unique_id=1918506897]
+custom_minimum_size = Vector2(100, 150)
+custom_maximum_size = Vector2(100, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -75.0
+offset_right = 50.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5rbrh")
+script = ExtResource("2_glfjp")
+
+[node name="Label" type="Label" parent="." unique_id=1145195466]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_right = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "card1"
+horizontal_alignment = 1
+vertical_alignment = 1

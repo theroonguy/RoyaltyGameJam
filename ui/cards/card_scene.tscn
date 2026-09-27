@@ -17,8 +17,3 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_pu40k")
 script = ExtResource("1_yssjy")
-
-[node name="Influence" type="Label" parent="." unique_id=812492044]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0

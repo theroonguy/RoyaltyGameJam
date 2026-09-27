@@ -1,13 +1,22 @@
 [gd_scene format=3 uid="uid://dxni1mr7iaopm"]
 
 [ext_resource type="Script" uid="uid://3lw8fgvjufk8" path="res://ui/cards/hand.gd" id="1_7o6lk"]
+[ext_resource type="Texture2D" uid="uid://b813cjk5idk6h" path="res://assets/template1_cardhands1.png" id="2_l5xfj"]
 
-[node name="Hand" type="Control" unique_id=19865066]
+[node name="Hand" type="Control" unique_id=1505745457]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 739.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7o6lk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=979290481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l5xfj")

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dd2qq428tyqe0"]
 
 [ext_resource type="Script" uid="uid://dy3o5uqn3reil" path="res://ui/dialogue/dialogue_region.gd" id="1_tjw7j"]
-[ext_resource type="PackedScene" uid="uid://btptoqveg8uu4" path="res://ui/dialogue/dialogue_box.tscn" id="2_0cfmo"]
 
-[node name="DialogueRegion" type="VBoxContainer" unique_id=615965448]
+[node name="DialogueRegion" type="Control" unique_id=479531730]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,12 +11,3 @@ offset_left = 843.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tjw7j")
-
-[node name="DialogueBox" parent="." unique_id=1590087590 instance=ExtResource("2_0cfmo")]
-layout_mode = 2
-
-[node name="DialogueBox2" parent="." unique_id=1149320854 instance=ExtResource("2_0cfmo")]
-layout_mode = 2
-
-[node name="DialogueBox3" parent="." unique_id=177617508 instance=ExtResource("2_0cfmo")]
-layout_mode = 2

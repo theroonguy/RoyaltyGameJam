@@ -2,37 +2,39 @@
 
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_004gg"]
 [ext_resource type="Resource" uid="uid://c7ynqrgn001t8" path="res://cards/general.tres" id="1_sic06"]
-[ext_resource type="Script" uid="uid://c803clvbsiok0" path="res://dialogue/influence.gd" id="2_0vnuy"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="2_8tmwt"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_buo7l"]
+[ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="2_diayr"]
 [ext_resource type="Texture2D" uid="uid://b5yq1ukc7ug5x" path="res://characters/general/General Default.png" id="4_diayr"]
 
-[sub_resource type="Resource" id="Resource_6adrn"]
+[sub_resource type="Resource" id="Resource_owwxd"]
 script = ExtResource("2_buo7l")
-text = "yo why u lying"
+text = "woah what a great option1	"
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_rlb0c"]
+script = ExtResource("2_buo7l")
+text = "this is so other"
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_buo7l"]
+script = ExtResource("2_diayr")
+text1 = "option 1"
+option1 = SubResource("Resource_owwxd")
+text2 = "other thing"
+option2 = SubResource("Resource_rlb0c")
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
 
 [sub_resource type="Resource" id="Resource_sic06"]
 script = ExtResource("2_8tmwt")
 card = ExtResource("1_sic06")
+next = SubResource("Resource_buo7l")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
-
-[sub_resource type="Resource" id="Resource_ulx81"]
-script = ExtResource("2_buo7l")
-text = "yeah i trust you"
-next = SubResource("Resource_sic06")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_2xk3c"]
-script = ExtResource("2_0vnuy")
-success = SubResource("Resource_ulx81")
-failure = SubResource("Resource_6adrn")
-metadata/_custom_type_script = "uid://c803clvbsiok0"
 
 [sub_resource type="Resource" id="Resource_0vnuy"]
 script = ExtResource("2_buo7l")
-text = "you! who are you??"
-next = SubResource("Resource_2xk3c")
+text = "honk shoo"
+next = SubResource("Resource_sic06")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [resource]
@@ -40,5 +42,4 @@ script = ExtResource("1_004gg")
 name = "General"
 dialogue = SubResource("Resource_0vnuy")
 pic = ExtResource("4_diayr")
-influence = 2
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

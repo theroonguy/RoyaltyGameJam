@@ -1,7 +1,7 @@
 extends Control
 
 var active_character: Character
-@onready var stop: Button = %Stop
+@onready var stop: Button = $HSplitContainer/VBoxContainer/MarginContainer/Stop
 @onready var character: Button = %Character
 
 @onready var dialogue_region: Control = %DialogueRegion
@@ -9,7 +9,6 @@ var active_character: Character
 func _ready() -> void:
 	stop.pressed.connect(_on_stop)
 	GameManager.screen_changed.connect(_on_screen_changed)
-	GameManager.interacted_with_character.connect(_on_interacted_with_character)
 	character.pressed.connect(_on_character_pressed)
 
 func start_dialogue():
@@ -24,7 +23,7 @@ func start_dialogue():
 		character.icon = active_character.pic
 
 func _on_stop():
-	GameManager.change_screen(GameManager.last_location)
+	GameManager.change_screen(GameManager.Screen.CHARACTERS)
 
 func _on_screen_changed(screen: int) -> void:
 	if screen == GameManager.Screen.DIALOGUE:
@@ -32,10 +31,6 @@ func _on_screen_changed(screen: int) -> void:
 	else:
 		hide()
 
-func _on_interacted_with_character(character: Character) -> void:
-	active_character = character
-	start_dialogue()
-	GameManager.change_screen(GameManager.Screen.DIALOGUE)
 
 func _on_character_pressed() -> bool:
 	if not character:
