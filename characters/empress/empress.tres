@@ -1,12 +1,46 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://i68fhjgevimt"]
 
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="1_4kg80"]
+[ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="1_c33si"]
+[ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="2_1hgpb"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="2_5s0q1"]
 [ext_resource type="Texture2D" uid="uid://bfrxep6nn3ui4" path="res://characters/empress/Empress Default.png" id="2_hlvpr"]
+
+[sub_resource type="Resource" id="Resource_1j7bm"]
+script = ExtResource("1_c33si")
+text = "Why have you returned?"
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_y1yqk"]
+script = ExtResource("2_1hgpb")
+text1 = "I do not have much memory of my past. I only remember a fire in the early stages of my youth, but I was raised by a rural family in the mountainside."
+option1 = SubResource("Resource_1j7bm")
+text2 = "I was adopted by a foster family, but I clearly remember my roots in this kingdom."
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_jknef"]
+script = ExtResource("1_c33si")
+text = "Name it. But reveal your identity. You seem... familiar. I need to know before we proceed."
+next = SubResource("Resource_y1yqk")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_f1ljg"]
+script = ExtResource("2_1hgpb")
+text1 = "I do have information... but only for a price."
+option1 = SubResource("Resource_jknef")
+text2 = "What... do you want to know?"
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_y7xir"]
+script = ExtResource("1_c33si")
+text = "I was told you had information about the affair. Wait... who are you?"
+next = SubResource("Resource_f1ljg")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [resource]
 script = ExtResource("2_5s0q1")
 name = "The Empress"
+dialogue3 = SubResource("Resource_y7xir")
 pic = ExtResource("2_hlvpr")
 influence = 4
 suspicion = 2
