@@ -1,10 +1,68 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://ds2vmwv6nq232"]
 
+[ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="1_c3ppw"]
 [ext_resource type="Texture2D" uid="uid://c1xm7n4yt3aet" path="res://characters/eunuch/Eunuch Default.png" id="1_rg4qk"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_xfchy"]
+[ext_resource type="Script" uid="uid://bhhgcakh2ani4" path="res://dialogue/test_suspicion.gd" id="2_vqerr"]
+[ext_resource type="Script" uid="uid://bwpwtdqlrhk50" path="res://dialogue/add_suspicion.gd" id="3_bywoo"]
+[ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="4_xjrel"]
+
+[sub_resource type="Resource" id="Resource_nbd7y"]
+script = ExtResource("1_c3ppw")
+text = "i'm gonna kill you so bad"
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_pm768"]
+script = ExtResource("1_c3ppw")
+text = "you're off the hook... for now..."
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_xfib6"]
+script = ExtResource("2_vqerr")
+success = SubResource("Resource_pm768")
+failure = SubResource("Resource_nbd7y")
+metadata/_custom_type_script = "uid://bhhgcakh2ani4"
+
+[sub_resource type="Resource" id="Resource_a0t00"]
+script = ExtResource("1_c3ppw")
+text = "anyways... you should go"
+next = SubResource("Resource_xfib6")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_4tldc"]
+script = ExtResource("1_c3ppw")
+text = "okay... why are you here then?"
+next = SubResource("Resource_a0t00")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_3ea82"]
+script = ExtResource("1_c3ppw")
+text = "bit straight forward, don't you think?"
+next = SubResource("Resource_a0t00")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_xujy6"]
+script = ExtResource("3_bywoo")
+next = SubResource("Resource_3ea82")
+metadata/_custom_type_script = "uid://bwpwtdqlrhk50"
+
+[sub_resource type="Resource" id="Resource_lihmg"]
+script = ExtResource("4_xjrel")
+text1 = "i'm just a nobody"
+option1 = SubResource("Resource_4tldc")
+text2 = "i'm the lost heir. that one"
+option2 = SubResource("Resource_xujy6")
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_dws4u"]
+script = ExtResource("1_c3ppw")
+text = "who are you?"
+next = SubResource("Resource_lihmg")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [resource]
 script = ExtResource("1_xfchy")
 name = "Eunuch"
+dialogue = SubResource("Resource_dws4u")
 pic = ExtResource("1_rg4qk")
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

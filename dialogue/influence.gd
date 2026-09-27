@@ -6,7 +6,7 @@ class_name InfluenceDialogue
 @export var failure: Dialogue
 @export var needed_influence: int = 1
 
-func run(character: Character) -> void:
+func _run(character: Character) -> void:
 	var result: Array = await GameManager.card_played_on_character
 	var card: Card = result[0]
 	var c_result: Character = result[1]
