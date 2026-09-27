@@ -4,6 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b813cjk5idk6h" path="res://assets/temp_assets/template1_cardhands1.png" id="2_bql27"]
 [ext_resource type="Script" uid="uid://d0jufpj0sp6g4" path="res://ui/cards/temp_hand.gd" id="3_bql27"]
 
+[sub_resource type="Curve" id="Curve_bql27"]
+_data = [Vector2(0, 0), 0.0, 4.8, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.8, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_jslrx"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 6.0, 0, 0, Vector2(0.5, 1.4901161e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 6.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="TempCardGame" type="Control" unique_id=1505745457]
 layout_mode = 3
 anchors_preset = 15
@@ -42,7 +51,10 @@ offset_top = -163.0
 offset_right = 420.5
 grow_horizontal = 2
 grow_vertical = 0
+color = Color(0.54976076, 0.5497609, 0.5497609, 1)
 script = ExtResource("3_bql27")
+hand_curve = SubResource("Curve_bql27")
+rotation_curve = SubResource("Curve_jslrx")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=773769335]
 layout_mode = 1

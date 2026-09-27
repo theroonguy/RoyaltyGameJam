@@ -32,7 +32,33 @@ func discard() -> void:
 	_update_cards() # redistribute remaining cards 
 
 func _update_cards() -> void: 
+	var cards := get_child_count()
+	var all_cards_size := TempCard.SIZE.x * cards + x_sep * (cards - 1) # could be TempCard or Card i forgot ngl 
 	print("updating cards")
+	
+	var final_x_sep := x_sep # this and below are basically just the math required to get the cards to overlap at a required amount yk
+	
+	if all_cards_size > size.x: 
+		final_x_sep = (size.x - TempCard.SIZE.x * cards) / (cards - 1)
+		all_cards_size = size.x
+	
+	var offset := (size.x - all_cards_size) / 2
+	
+	for i in cards: 
+		var card := get_child(i)
+		var y_multiplier := hand_curve.sample(1.0 / (cards - 1) * i) 
+		var rot_multiplier := rotation_curve.sample(1.0 / (cards - 1) * i)
+		
+		if cards == 1: # if we only have 1 card then like... we can't really divide by zero huh
+			y_multiplier = 0.0
+			rot_multiplier = 0.0 
+			
+		# set final posoition of all the cards once ur done with all the boring maths of finding what to divide and whateversz
+		var final_x: float = offset + TempCard.SIZE.x * i + final_x_sep * i 
+		var final_y: float = y_min + y_max * y_multiplier 
+		
+		card.position = Vector2(final_x, final_y)
+		card.rotation_degrees = max_rotation_degrees * rot_multiplier 
 
 
 ## Called when the node enters the scene tree for the first time.
