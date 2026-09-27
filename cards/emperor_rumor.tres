@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://b8ciafgoyrhv"]
+
+[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="1_447co"]
+
+[resource]
+script = ExtResource("1_447co")
+name = "The Emperor's Affair"
+desc = "The letter the Shaman gave me seems to have been a love letter signed in his name... to someone other than the Empress."
+metadata/_custom_type_script = "uid://ok0arsecgw2i"

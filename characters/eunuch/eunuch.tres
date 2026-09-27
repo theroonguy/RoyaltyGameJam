@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="1_c3ppw"]
 [ext_resource type="Texture2D" uid="uid://c1xm7n4yt3aet" path="res://characters/eunuch/Eunuch Default.png" id="1_rg4qk"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_xfchy"]
-[ext_resource type="Resource" uid="uid://dqphn3vvr8i3m" path="res://cards/letter.tres" id="2_xjrel"]
-[ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="3_xdoq4"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="4_xjrel"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="5_vqerr"]
 
@@ -13,21 +11,9 @@
 script = ExtResource("1_bywoo")
 metadata/_custom_type_script = "uid://cqduvc147h3nv"
 
-[sub_resource type="Resource" id="Resource_xgymu"]
-script = ExtResource("3_xdoq4")
-card = ExtResource("2_xjrel")
-metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
-
-[sub_resource type="Resource" id="Resource_jm8pl"]
-script = ExtResource("1_c3ppw")
-text = "You're rather sneaky... take this."
-next = SubResource("Resource_xgymu")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
 [sub_resource type="Resource" id="Resource_5644a"]
 script = ExtResource("1_c3ppw")
 text = "You've found yourself in the midst of a grand palace. Show some respect."
-next = SubResource("Resource_jm8pl")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_cbab0"]
@@ -49,4 +35,5 @@ script = ExtResource("1_xfchy")
 name = "Eunuch"
 dialogue = SubResource("Resource_bx41v")
 pic = ExtResource("1_rg4qk")
+influence = 4
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

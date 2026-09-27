@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="6_cnw7j"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="7_466ta"]
 [ext_resource type="Texture2D" uid="uid://g2xlkm2uvjho" path="res://characters/consort_li/Consort Li Happy.png" id="8_r3q08"]
+[ext_resource type="Resource" uid="uid://b8ciafgoyrhv" path="res://cards/emperor_rumor.tres" id="8_vtv1l"]
 
 [sub_resource type="Resource" id="Resource_x1hd4"]
 script = ExtResource("4_cnw7j")
@@ -52,9 +53,23 @@ text = "Oh! You're back! Any more gossip for me? "
 next = SubResource("Resource_wglyx")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
+[sub_resource type="Resource" id="Resource_kih3c"]
+script = ExtResource("4_cnw7j")
+card = ExtResource("1_466ta")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_82m1w"]
+script = ExtResource("4_cnw7j")
+card = ExtResource("8_vtv1l")
+next = SubResource("Resource_kih3c")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
 [sub_resource type="Resource" id="Resource_t86mh"]
 script = ExtResource("2_42yqo")
-text = "Oh! Well if this isn't something!"
+text = "Oh! Well if this isn't something!
+
+Seems like the Emperor has been up to mischevious acts..."
+next = SubResource("Resource_82m1w")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_xck2r"]
@@ -68,5 +83,6 @@ script = ExtResource("1_hv7p1")
 name = "Consort Li"
 dialogue2 = SubResource("Resource_qvojs")
 pic = ExtResource("8_r3q08")
+influence = 3
 interactions = Array[ExtResource("7_466ta")]([SubResource("Resource_xck2r")])
 metadata/_custom_type_script = "uid://hv71lve7e8qh"
