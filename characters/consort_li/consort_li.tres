@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_42yqo"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="3_fatta"]
 [ext_resource type="Resource" uid="uid://dqphn3vvr8i3m" path="res://cards/letter.tres" id="4_1y3fh"]
+[ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="4_cnw7j"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="6_cnw7j"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="7_466ta"]
 
 [sub_resource type="Resource" id="Resource_7e608"]
@@ -12,11 +14,29 @@ script = ExtResource("2_42yqo")
 text = "Ah, no need to bother with conversation, then. Go off now!"
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
+[sub_resource type="Resource" id="Resource_lihmg"]
+script = ExtResource("6_cnw7j")
+text = "A rumor starts that the Emperor is having an affair... what could've been the contents in that letter?"
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_dws4u"]
+script = ExtResource("2_42yqo")
+text = "Oh! Well, if this isn't something!"
+next = SubResource("Resource_lihmg")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_n6xo6"]
+script = ExtResource("4_cnw7j")
+card = ExtResource("4_1y3fh")
+next = SubResource("Resource_dws4u")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
 [sub_resource type="Resource" id="Resource_hfcja"]
 script = ExtResource("3_fatta")
 text1 = "No, I'm just passing through."
 option1 = SubResource("Resource_7e608")
-text2 = "hhhh"
+text2 = "No, but I do have some gossip."
+option2 = SubResource("Resource_n6xo6")
 metadata/_custom_type_script = "uid://uc8ep36gysp7"
 
 [sub_resource type="Resource" id="Resource_1umrq"]
