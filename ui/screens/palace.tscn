@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://ckixcujcpmv3m"]
 
 [ext_resource type="Script" uid="uid://coneko1iqfmhe" path="res://ui/screens/character_list.gd" id="1_mbrh5"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="2_jknef"]
 [ext_resource type="PackedScene" uid="uid://hmtbkg5gav52" path="res://ui/characters/character_button.tscn" id="3_ltw2s"]
 [ext_resource type="Resource" uid="uid://daq1xwmqrlcjt" path="res://characters/emperor/emperor.tres" id="4_ltw2s"]
 [ext_resource type="Resource" uid="uid://dnmbpbshgh4ea" path="res://characters/general/general.tres" id="4_n0y2n"]
 [ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="5_ltw2s"]
 [ext_resource type="Resource" uid="uid://i68fhjgevimt" path="res://characters/empress/empress.tres" id="6_y7xir"]
 [ext_resource type="Resource" uid="uid://dw5sshfv22okn" path="res://characters/consort_li/consort_li.tres" id="7_f1ljg"]
+
+[sub_resource type="Resource" id="Resource_f1ljg"]
+script = ExtResource("2_jknef")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
 
 [node name="Palace" type="Control" unique_id=1744399672]
 layout_mode = 3
@@ -19,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mbrh5")
 location = 3
+dialogue_on_approach = SubResource("Resource_f1ljg")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2126907276]
 layout_mode = 1
@@ -77,6 +83,7 @@ scale = Vector2(0.815, 0.815)
 character = ExtResource("6_y7xir")
 
 [node name="CharacterButton5" parent="." unique_id=2048060340 instance=ExtResource("3_ltw2s")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0

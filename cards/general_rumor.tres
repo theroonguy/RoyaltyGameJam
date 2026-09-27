@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://cmqi4mqu20mal"]
+
+[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="1_x7l1v"]
+
+[resource]
+script = ExtResource("1_x7l1v")
+name = "The General's Thievery"
+desc = "Jewels that look similar to the Empress's fell out of General Yue's pockets. Perhaps he was taking them for himself?"
+metadata/_custom_type_script = "uid://ok0arsecgw2i"

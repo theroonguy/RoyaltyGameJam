@@ -33,6 +33,7 @@ func start_dialogue():
 	if active_character:
 		if not active_character.dialogue:
 			printerr("no dialogue assigned")
+			GameManager.actions_left += 1
 			return
 		
 		setup_dialogue()

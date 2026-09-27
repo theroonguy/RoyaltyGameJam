@@ -18,6 +18,20 @@ grow_vertical = 2
 script = ExtResource("1_fdejs")
 location = 4
 
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=968165702]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_oh7gt")
+region_rect = Rect2(-0.08799744, 0, 64.088, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
 [node name="CharacterButton" parent="." unique_id=1083688175 instance=ExtResource("2_i30dq")]
 layout_mode = 0
 anchors_preset = 0
@@ -55,19 +69,5 @@ offset_right = 180.0
 offset_bottom = -21.0
 grow_vertical = 0
 text = "back"
-
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=968165702]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_oh7gt")
-region_rect = Rect2(-0.08799744, 0, 64.088, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
 
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]

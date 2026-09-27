@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://dnmbpbshgh4ea"]
 
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_004gg"]
+[ext_resource type="Resource" uid="uid://cmqi4mqu20mal" path="res://cards/general_rumor.tres" id="1_kq8pr"]
 [ext_resource type="Resource" uid="uid://5tppegpx31sv" path="res://cards/rumor.tres" id="1_qvojs"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="2_0vnuy"]
+[ext_resource type="Resource" uid="uid://c7ynqrgn001t8" path="res://cards/general.tres" id="2_4ivqm"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="2_8tmwt"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_buo7l"]
 [ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="4_47mdg"]
@@ -11,6 +13,49 @@
 [ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="5_kq8pr"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="6_4ivqm"]
 [ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="8_hamqk"]
+
+[sub_resource type="Resource" id="Resource_82m1w"]
+script = ExtResource("2_8tmwt")
+card = ExtResource("2_4ivqm")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_e3oo0"]
+script = ExtResource("2_8tmwt")
+card = ExtResource("1_kq8pr")
+next = SubResource("Resource_82m1w")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_oh7gt"]
+script = ExtResource("2_buo7l")
+text = "Oh- oh no. You weren't supposed to see that. You'll stay silent, right?"
+next = SubResource("Resource_e3oo0")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_viybm"]
+script = ExtResource("5_kq8pr")
+text = "Something colorful and shiny drops out of General Yue's pockets!"
+next = SubResource("Resource_oh7gt")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_pdkiw"]
+script = ExtResource("2_buo7l")
+text = "We'll have to conduct a bag search if you want to proceed."
+next = SubResource("Resource_viybm")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_i30dq"]
+script = ExtResource("6_4ivqm")
+text1 = "I'm someone passing through."
+option1 = SubResource("Resource_pdkiw")
+text2 = "I'm simply exploring the kingdom."
+option2 = SubResource("Resource_pdkiw")
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_fdejs"]
+script = ExtResource("2_buo7l")
+text = "Halt! What brings you to the outer palace?"
+next = SubResource("Resource_i30dq")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_ekwo1"]
 script = ExtResource("2_8tmwt")
@@ -86,6 +131,7 @@ metadata/_custom_type_script = "uid://dxba5rqbtyoxw"
 [resource]
 script = ExtResource("1_004gg")
 name = "General"
+dialogue = SubResource("Resource_fdejs")
 dialogue2 = SubResource("Resource_c4ju4")
 pic = ExtResource("4_diayr")
 influence = 2
