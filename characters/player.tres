@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cidggcnguue2p"]
+
+[ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="1_viain"]
+[ext_resource type="Texture2D" uid="uid://c6wqse4p5wxik" path="res://icon.png" id="2_5qosw"]
+[ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="2_di3u7"]
+
+[resource]
+script = ExtResource("2_di3u7")
+name = "Player"
+pic = ExtResource("2_5qosw")
+metadata/_custom_type_script = "uid://hv71lve7e8qh"
