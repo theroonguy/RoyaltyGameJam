@@ -67,6 +67,7 @@ offset_right = 805.0
 offset_bottom = 525.0
 grow_horizontal = 1
 grow_vertical = 1
+show_on_day_1 = false
 character = ExtResource("6_cbab0")
 
 [node name="GoBack" type="Button" parent="." unique_id=1597462806]

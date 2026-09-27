@@ -5,6 +5,8 @@ class_name CharacterButton
 @onready var picture: TextureRect = %Picture
 @onready var name_label: Label = %NameLabel
 
+@export var show_on_day_1: bool = true
+
 @export var character: Character:
 	set(new_val):
 		character = new_val
@@ -18,6 +20,14 @@ func _ready() -> void:
 	pressed.connect(select_character)
 	
 	setup_button()
+	
+	if !show_on_day_1:
+		hide()
+	
+	GameManager.day_updated.connect(_on_day_updated)
+
+func _on_day_updated() -> void:
+	show()
 
 func setup_button():
 	if not character:

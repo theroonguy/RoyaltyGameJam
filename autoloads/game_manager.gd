@@ -34,6 +34,7 @@ var actions_left: int = 4:
 var days_left: int = 3:
 	set(new_val):
 		days_left = new_val
+		day_updated.emit()
 		
 		if days_left == 0:
 			kill_player("You ran out of time and were caught...")
@@ -80,6 +81,7 @@ signal write_status(text: String)
 signal time_changed(time: DayCycle)
 
 signal actions_updated()
+signal day_updated()
 
 func _ready() -> void:
 	var char_resources = get_all_resources_under("characters")

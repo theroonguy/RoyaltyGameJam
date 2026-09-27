@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="1_c3ppw"]
 [ext_resource type="Texture2D" uid="uid://c1xm7n4yt3aet" path="res://characters/eunuch/Eunuch Default.png" id="1_rg4qk"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_xfchy"]
-[ext_resource type="Resource" uid="uid://blmiphiirafj" path="res://cards/love_letter.tres" id="2_xjrel"]
+[ext_resource type="Resource" uid="uid://dqphn3vvr8i3m" path="res://cards/letter.tres" id="2_xjrel"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="3_xdoq4"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="4_xjrel"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="5_vqerr"]

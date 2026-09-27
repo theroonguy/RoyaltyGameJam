@@ -11,16 +11,9 @@
 [ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="7_4euh3"]
 [ext_resource type="Script" uid="uid://c6unjfsym1itq" path="res://dialogue/dialogue.gd" id="7_c4ju4"]
 
-[sub_resource type="Resource" id="Resource_wcrb0"]
-script = ExtResource("3_fcw2k")
-text = "i'm saying somethiing now!"
-from_player = true
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
 [sub_resource type="Resource" id="Resource_msw8j"]
 script = ExtResource("2_e3ykk")
 card = ExtResource("2_hyjo1")
-next = SubResource("Resource_wcrb0")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
 [sub_resource type="Resource" id="Resource_li1y7"]
@@ -38,7 +31,6 @@ metadata/_custom_type_script = "uid://07wi776s8fse"
 [sub_resource type="Resource" id="Resource_e3ykk"]
 script = ExtResource("3_fcw2k")
 text = "Use your connections wisely before they dry up. All it takes it playing the wrong card to lose your life.
-
 Take this letter and deliver it to Consort Li. She will know what to do."
 next = SubResource("Resource_5n22f")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
