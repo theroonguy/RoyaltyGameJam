@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://hmtbkg5gav52" path="res://ui/characters/character_button.tscn" id="3_bx41v"]
 [ext_resource type="Resource" uid="uid://ct7qr30fbe4k6" path="res://characters/shaman/shaman.tres" id="4_awg2b"]
 [ext_resource type="FontFile" uid="uid://mhwbtf0ht22a" path="res://assets/ui/Newsreader-VariableFont_opsz,wght.ttf" id="6_bx41v"]
+[ext_resource type="Resource" uid="uid://dnmbpbshgh4ea" path="res://characters/general/general.tres" id="6_cbab0"]
 
 [sub_resource type="Resource" id="Resource_p7rkb"]
 script = ExtResource("2_awg2b")
@@ -54,6 +55,19 @@ offset_bottom = 524.0
 grow_horizontal = 1
 grow_vertical = 1
 character = ExtResource("4_awg2b")
+
+[node name="CharacterButton2" parent="." unique_id=1790260995 instance=ExtResource("3_bx41v")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 505.0
+offset_top = 125.0
+offset_right = 805.0
+offset_bottom = 525.0
+grow_horizontal = 1
+grow_vertical = 1
+character = ExtResource("6_cbab0")
 
 [node name="GoBack" type="Button" parent="." unique_id=1597462806]
 layout_mode = 1

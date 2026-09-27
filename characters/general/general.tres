@@ -1,8 +1,7 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://dnmbpbshgh4ea"]
 
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_004gg"]
-[ext_resource type="Resource" uid="uid://c7ynqrgn001t8" path="res://cards/general.tres" id="1_sic06"]
-[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="1_wglyx"]
+[ext_resource type="Resource" uid="uid://5tppegpx31sv" path="res://cards/rumor.tres" id="1_qvojs"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="2_0vnuy"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="2_8tmwt"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_buo7l"]
@@ -13,52 +12,53 @@
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="6_4ivqm"]
 [ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="8_hamqk"]
 
-[sub_resource type="Resource" id="Resource_estwa"]
-script = ExtResource("1_wglyx")
-name = "The General's Theft"
-desc = "The gems that fell out of General Yue's pockets look awfully similar to the Empress's. It's possible he may be stealing jewels from her."
-metadata/_custom_type_script = "uid://ok0arsecgw2i"
-
-[sub_resource type="Resource" id="Resource_o3poq"]
+[sub_resource type="Resource" id="Resource_ekwo1"]
 script = ExtResource("2_8tmwt")
-card = ExtResource("1_sic06")
+card = ExtResource("1_qvojs")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
-[sub_resource type="Resource" id="Resource_eu7qt"]
-script = ExtResource("2_8tmwt")
-card = SubResource("Resource_estwa")
-next = SubResource("Resource_o3poq")
-metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
-
-[sub_resource type="Resource" id="Resource_t86mh"]
-script = ExtResource("2_buo7l")
-text = "Oh- oh no. You weren't supposed to see that. You'll stay silent, right?"
-next = SubResource("Resource_eu7qt")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_xck2r"]
+[sub_resource type="Resource" id="Resource_okem8"]
 script = ExtResource("5_kq8pr")
-text = "Something colorful and shiny falls out of General Yue's pocket!"
-next = SubResource("Resource_t86mh")
+text = "You sneak behind a boulder to watch what the General does."
+next = SubResource("Resource_ekwo1")
 metadata/_custom_type_script = "uid://8ly55p71e14f"
 
-[sub_resource type="Resource" id="Resource_7e608"]
+[sub_resource type="Resource" id="Resource_8w85p"]
 script = ExtResource("2_buo7l")
-text = "We'll have to conduct a bag search if you want to proceed."
-next = SubResource("Resource_xck2r")
+text = "I'll look over it this once. Leave, and never return."
+next = SubResource("Resource_okem8")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
-[sub_resource type="Resource" id="Resource_hfcja"]
+[sub_resource type="Resource" id="Resource_nws1v"]
+script = ExtResource("5_kq8pr")
+text = "The general is stunned by your boldness and audacity. "
+next = SubResource("Resource_8w85p")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_uvr5l"]
+script = ExtResource("2_buo7l")
+text = "..."
+next = SubResource("Resource_nws1v")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_snj7c"]
+script = ExtResource("2_buo7l")
+text = "...Very well. Leave, now. Stop coming back."
+next = SubResource("Resource_okem8")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_4euh3"]
 script = ExtResource("6_4ivqm")
-text1 = "I'm someone passing through."
-option1 = SubResource("Resource_7e608")
-text2 = "I'm simply exploring the Kingdom."
+text1 = "This is where I go to relax and regroup."
+option1 = SubResource("Resource_snj7c")
+text2 = "I came to confess my love for you."
+next = SubResource("Resource_uvr5l")
 metadata/_custom_type_script = "uid://uc8ep36gysp7"
 
-[sub_resource type="Resource" id="Resource_1umrq"]
+[sub_resource type="Resource" id="Resource_c4ju4"]
 script = ExtResource("2_buo7l")
-text = "Halt! What brings you to the Palace?"
-next = SubResource("Resource_hfcja")
+text = "You—yet again you find me in these mountains. Why do you keep returning?"
+next = SubResource("Resource_4euh3")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_47mdg"]
@@ -86,7 +86,7 @@ metadata/_custom_type_script = "uid://dxba5rqbtyoxw"
 [resource]
 script = ExtResource("1_004gg")
 name = "General"
-dialogue = SubResource("Resource_1umrq")
+dialogue2 = SubResource("Resource_c4ju4")
 pic = ExtResource("4_diayr")
 influence = 2
 interactions = Array[ExtResource("2_0vnuy")]([SubResource("Resource_sic06")])
