@@ -19,8 +19,6 @@ config/icon="res://icon.png"
 [autoload]
 
 GameManager="*uid://643kcoyd3gb"
-Handmanager="*uid://3lw8fgvjufk8"
-TempHand="*uid://d0jufpj0sp6g4"
 AudioManager="*uid://60do40k5e6g5"
 
 [display]

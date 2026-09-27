@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 script = ExtResource("3_03vy3")
 success = SubResource("Resource_ghfw3")
 failure = SubResource("Resource_bic83")
-needed_influence = 5
+needed_influence = 8
 metadata/_custom_type_script = "uid://c803clvbsiok0"
 
 [sub_resource type="Resource" id="Resource_k6pcn"]
@@ -69,23 +69,10 @@ text = "Name it. But reveal your identity. You seem... familiar. I need to know 
 next = SubResource("Resource_y1yqk")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
-[sub_resource type="Resource" id="Resource_mdwk1"]
-script = ExtResource("4_ntoiu")
-text = "The Empress needs convincing! Use your connections as your leverage! "
-next = SubResource("Resource_nkinp")
-metadata/_custom_type_script = "uid://8ly55p71e14f"
-
-[sub_resource type="Resource" id="Resource_u4xvn"]
-script = ExtResource("1_c33si")
-text = "I'm not sure I should believe you. "
-next = SubResource("Resource_mdwk1")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
 [sub_resource type="Resource" id="Resource_54oxg"]
 script = ExtResource("1_c33si")
 text = "I felt a calling… and seeing you, I feel a familiar sense of belonging."
 from_player = true
-next = SubResource("Resource_u4xvn")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_iri43"]
@@ -94,37 +81,11 @@ text = "Why have you returned?"
 next = SubResource("Resource_54oxg")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
-[sub_resource type="Resource" id="Resource_o05mc"]
-script = ExtResource("4_ntoiu")
-text = "The Empress needs convincing! Use your connections as your leverage!"
-next = SubResource("Resource_nkinp")
-metadata/_custom_type_script = "uid://8ly55p71e14f"
-
-[sub_resource type="Resource" id="Resource_d76e3"]
-script = ExtResource("1_c33si")
-text = "I’m not sure I should believe you."
-next = SubResource("Resource_o05mc")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_38wlk"]
-script = ExtResource("1_c33si")
-text = "I recall a grand fire, although I do not recall the events thereafter."
-from_player = true
-next = SubResource("Resource_d76e3")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_bh0yi"]
-script = ExtResource("1_c33si")
-text = "And anything of a fire?"
-next = SubResource("Resource_38wlk")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
 [sub_resource type="Resource" id="Resource_j0s2u"]
 script = ExtResource("2_1hgpb")
 text1 = "I do not have much memory of my past. I only remember a fire in the early stages of my youth, but I was raised by a rural family in the mountainside."
 option1 = SubResource("Resource_iri43")
 text2 = "I was adopted by a foster family, but I clearly remember my roots in this kingdom."
-option2 = SubResource("Resource_bh0yi")
 metadata/_custom_type_script = "uid://uc8ep36gysp7"
 
 [sub_resource type="Resource" id="Resource_pb8vf"]
