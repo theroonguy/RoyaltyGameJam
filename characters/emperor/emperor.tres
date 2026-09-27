@@ -1,31 +1,20 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://daq1xwmqrlcjt"]
 
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_1tr3f"]
+[ext_resource type="Resource" uid="uid://dga72sm7gfx76" path="res://cards/empress.tres" id="1_giv83"]
 [ext_resource type="Texture2D" uid="uid://b5aqq0t3ognqx" path="res://characters/emperor/Emperor Default.png" id="1_hr512"]
-[ext_resource type="Script" uid="uid://c803clvbsiok0" path="res://dialogue/influence.gd" id="2_lulnr"]
+[ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="3_40exd"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="4_1nsh7"]
 
-[sub_resource type="Resource" id="Resource_diayr"]
-script = ExtResource("4_1nsh7")
-text = "time for you to die"
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_8tmwt"]
-script = ExtResource("4_1nsh7")
-text = "you're the best"
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_buo7l"]
-script = ExtResource("2_lulnr")
-success = SubResource("Resource_8tmwt")
-failure = SubResource("Resource_diayr")
-needed_influence = 2
-metadata/_custom_type_script = "uid://c803clvbsiok0"
+[sub_resource type="Resource" id="Resource_3v447"]
+script = ExtResource("3_40exd")
+card = ExtResource("1_giv83")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
 [sub_resource type="Resource" id="Resource_hsb8p"]
 script = ExtResource("4_1nsh7")
 text = "my name is skyler white yo"
-next = SubResource("Resource_buo7l")
+next = SubResource("Resource_3v447")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_gl2vs"]
@@ -39,5 +28,4 @@ script = ExtResource("1_1tr3f")
 name = "Emperor"
 dialogue = SubResource("Resource_gl2vs")
 pic = ExtResource("1_hr512")
-suspicion = 2
 metadata/_custom_type_script = "uid://hv71lve7e8qh"
