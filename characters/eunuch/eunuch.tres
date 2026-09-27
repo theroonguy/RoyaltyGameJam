@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://ds2vmwv6nq232"]
+
+[ext_resource type="Texture2D" uid="uid://c1xm7n4yt3aet" path="res://characters/eunuch/Eunuch Default.png" id="1_rg4qk"]
+[ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_xfchy"]
+
+[resource]
+script = ExtResource("1_xfchy")
+name = "Eunuch"
+pic = ExtResource("1_rg4qk")
+metadata/_custom_type_script = "uid://hv71lve7e8qh"

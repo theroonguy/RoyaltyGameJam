@@ -1,8 +1,16 @@
+@tool
 extends Button
+class_name CharacterButton
 
-var character: Character
+@onready var picture: TextureRect = %Picture
+@onready var name_label: Label = %NameLabel
 
-@onready var texture_rect: TextureRect = $TextureRect
+@export var character: Character:
+	set(new_val):
+		character = new_val
+		
+		if picture:
+			setup_button()
 
 signal selected
 
@@ -17,12 +25,15 @@ func setup_button():
 		return false
 	
 	if character.pic:
-		texture_rect.texture = character.pic
-		texture_rect.size = Vector2(100,100)
+		picture.texture = character.pic
+		picture.size = Vector2(100,100)
 	
 	size = Vector2(150,150)
+	
+	name_label.text = character.name
 
 func select_character() -> bool:
+	
 	if not character:
 		printerr("no character selected!")
 		return false
@@ -38,6 +49,7 @@ func select_character() -> bool:
 		#return true
 	
 	selected.emit()
+	GameManager.talk_to_character(character)
 	
 	#printerr("no action available")
 	

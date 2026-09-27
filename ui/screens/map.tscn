@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bldhxu8c4vlpu"]
 
-[ext_resource type="Script" uid="uid://ckulobuhioly5" path="res://ui/map.gd" id="1_73axm"]
+[ext_resource type="Script" uid="uid://ckulobuhioly5" path="res://ui/screens/map.gd" id="1_73axm"]
 [ext_resource type="Texture2D" uid="uid://oend5n7q1xl3" path="res://assets/temp_assets/baddrawingofmap.png" id="1_uv4r8"]
 [ext_resource type="Texture2D" uid="uid://cc1ukqeoeukhe" path="res://assets/temp_assets/template1_palace1.png" id="2_1k2ba"]
 [ext_resource type="Texture2D" uid="uid://mk4dt82qvnp1" path="res://assets/temp_assets/template1_palace2.png" id="3_m8udb"]
@@ -32,7 +32,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_uv4r8")
-stretch_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MapBackground" unique_id=1580100704]
 layout_mode = 1

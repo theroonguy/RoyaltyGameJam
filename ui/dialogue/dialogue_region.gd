@@ -2,8 +2,6 @@ extends Control
 
 const DIALOGUE_BOX = preload("uid://btptoqveg8uu4")
 
-var num_messages: int = 0
-
 var queue: Array = []
 var buttons: Array
 
@@ -12,26 +10,20 @@ func _ready() -> void:
 	GameManager.dialogue_split.connect(_on_split_dialogue)
 
 func clear() -> void:
-	num_messages = 0
 	for child in get_children():
 		child.queue_free()
 
 func _on_dialogue_write(text: String, character: Character) -> void:
 	var new_dialogue = DIALOGUE_BOX.instantiate()
-	new_dialogue.position.y = num_messages * 50.0
 	add_child(new_dialogue)
 	new_dialogue.setup(character)
 	new_dialogue.write_text(text)
-	num_messages += 1
 
 func _on_split_dialogue(text1: String, option1: Dialogue, text2: String, option2: Dialogue, character: Character) -> void:
 	var button1 = Button.new()
 	button1.text = text1
 	var button2 = Button.new()
 	button2.text = text2
-	
-	button1.position.y = num_messages * 50.0
-	button1.position.y = num_messages * 50.0
 	
 	button1.position.x += 50
 	add_child(button1)

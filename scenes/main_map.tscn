@@ -1,68 +1,74 @@
 [gd_scene format=3 uid="uid://dqdw3onuhrcmi"]
 
 [ext_resource type="PackedScene" uid="uid://dxni1mr7iaopm" path="res://ui/cards/hand.tscn" id="1_1xo34"]
-[ext_resource type="PackedScene" uid="uid://brd3gd2o0el3y" path="res://ui/dialogue/dialogue_screen.tscn" id="1_kdyc3"]
-[ext_resource type="PackedScene" uid="uid://c56pgefbn2nuw" path="res://ui/characters/character_list.tscn" id="2_eqscl"]
+[ext_resource type="PackedScene" uid="uid://brd3gd2o0el3y" path="res://ui/screens/dialogue_screen.tscn" id="1_kdyc3"]
+[ext_resource type="PackedScene" uid="uid://ckixcujcpmv3m" path="res://ui/screens/palace.tscn" id="2_cyf2o"]
 [ext_resource type="PackedScene" uid="uid://b65wqix0x1nfk" path="res://ui/chart.tscn" id="2_uxg3y"]
-[ext_resource type="PackedScene" uid="uid://bldhxu8c4vlpu" path="res://ui/map.tscn" id="3_4synu"]
+[ext_resource type="PackedScene" uid="uid://bldhxu8c4vlpu" path="res://ui/screens/map.tscn" id="3_4synu"]
+[ext_resource type="PackedScene" uid="uid://doud8d5kyfst7" path="res://ui/screens/mountains.tscn" id="4_64gt2"]
 [ext_resource type="PackedScene" uid="uid://duqcpdwcimgsb" path="res://ui/description.tscn" id="4_kdyc3"]
+[ext_resource type="PackedScene" uid="uid://t85pajhhskxo" path="res://ui/screens/walls.tscn" id="5_64gt2"]
 
-[node name="MainMap" type="Control" unique_id=1064876462]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ylsh"]
+bg_color = Color(0.13077214, 0.13077214, 0.13077202, 1)
+
+[node name="MainMap" type="PanelContainer" unique_id=868644424]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1915707387]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ylsh")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1351810762]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=315080501]
+[node name="VBoxContainer" type="VSplitContainer" parent="MarginContainer" unique_id=544868787]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 22
+split_offsets = PackedInt32Array(679)
+dragging_enabled = false
+split_offset = 679
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1839213145]
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer" unique_id=956705737]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_constants/separation = 50
+theme_override_constants/separation = 22
+split_offsets = PackedInt32Array(153)
+dragging_enabled = false
+split_offset = 153
 
 [node name="MapContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=738280988]
 custom_minimum_size = Vector2(700, 450)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Map" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=273734124 instance=ExtResource("3_4synu")]
+visible = false
 layout_mode = 2
 
 [node name="DialogueScreen" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1329811230 instance=ExtResource("1_kdyc3")]
 visible = false
 layout_mode = 2
 
-[node name="CharacterList" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1744399672 instance=ExtResource("2_eqscl")]
+[node name="Palace" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1744399672 instance=ExtResource("2_cyf2o")]
 visible = false
 layout_mode = 2
 
-[node name="Map" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=273734124 instance=ExtResource("3_4synu")]
+[node name="Mountains" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1282597230 instance=ExtResource("4_64gt2")]
+layout_mode = 2
+
+[node name="OuterWalls" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=1264799389 instance=ExtResource("5_64gt2")]
+visible = false
 layout_mode = 2
 
 [node name="ChartContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1336517766]
 custom_minimum_size = Vector2(350, 450)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 
 [node name="Chart" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ChartContainer" unique_id=358690470]
 layout_mode = 2
@@ -73,24 +79,16 @@ horizontal_alignment = 2
 [node name="Chart2" parent="MarginContainer/VBoxContainer/HBoxContainer/ChartContainer" unique_id=59958713 instance=ExtResource("2_uxg3y")]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=213884702]
+[node name="HBoxContainer2" type="HSplitContainer" parent="MarginContainer/VBoxContainer" unique_id=1211343557]
 layout_mode = 2
 theme_override_constants/separation = 50
+split_offsets = PackedInt32Array(141)
+split_offset = 141
 
-[node name="HandsContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=349062188]
-custom_minimum_size = Vector2(700, 100)
+[node name="Hand" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1505745457 instance=ExtResource("1_1xo34")]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Hand" parent="MarginContainer/VBoxContainer/HBoxContainer2/HandsContainer" unique_id=1505745457 instance=ExtResource("1_1xo34")]
+[node name="Description" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1698845075 instance=ExtResource("4_kdyc3")]
 layout_mode = 2
-
-[node name="DescriptionContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=841123541]
-custom_minimum_size = Vector2(350, 100)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/DescriptionContainer" unique_id=1749356856]
-layout_mode = 2
-text = "Description"
-
-[node name="Description" parent="MarginContainer/VBoxContainer/HBoxContainer2/DescriptionContainer" unique_id=1698845075 instance=ExtResource("4_kdyc3")]
-layout_mode = 2
+size_flags_horizontal = 3

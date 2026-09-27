@@ -4,10 +4,14 @@ extends Node
 # SCREEN - clarifies which screen is shown out of map, characters and dialogue
 enum Screen {
 	MAP,
-	CHARACTERS,
 	DIALOGUE,
+	MOUNTAIN,
+	PALACE,
+	COURT,
+	WALLS,
 }
 var current_screen: Screen = Screen.MAP
+var last_location: Screen
 
 # suspicion meter -- 0 to 1, 1 being fully suspicious
 var suspicion: float = 0.0
@@ -28,6 +32,8 @@ var selected_card: Card = null:
 		card_selected.emit(new_card)
 
 signal character_killed(character: Character)
+signal card_played_on_character(card: Card, character: Character)
+
 signal card_selected(card: Card)
 signal card_added_to_hand(card: Card)
 signal card_removed_from_hand(card: Card)
@@ -36,6 +42,7 @@ signal screen_changed(screen: Screen)
 
 signal dialogue_written(text: String, character: Character)
 signal dialogue_split(text1: String, option1: Dialogue, text2: String, option2: Dialogue, character: Character)
+signal interacted_with_character(character: Character)
 
 func _ready() -> void:
 	var char_resources = get_all_resources_under("characters")
@@ -65,6 +72,7 @@ func form_relationships() -> void:
 				continue
 			
 			relationships[my_char][other_char] = randf_range(0.0, 1.0)
+	
 
 func add_card_to_hand(card: Card) -> void:
 	hand.append(card)
@@ -72,9 +80,10 @@ func add_card_to_hand(card: Card) -> void:
 	print("card added to hand: " + card.name)
 
 func use_card_on_character(card: Card, character: Character) -> void:
-	# TODO: base on character what will happen based on card
 	selected_card = null
 	print(card.name + " used on character: " + character.name)
+	
+	GameManager.card_played_on_character.emit(card, character)
 	
 	match card.name:
 		"Poison":
@@ -97,6 +106,10 @@ func split_dialogue(text1: String, option1: Dialogue, text2: String, option2: Di
 func change_screen(screen: Screen) -> void:
 	current_screen = screen
 	screen_changed.emit(screen)
+
+func talk_to_character(character: Character) -> void:
+	last_location = current_screen
+	interacted_with_character.emit(character)
 
 ########## UTILITY ##########
 
