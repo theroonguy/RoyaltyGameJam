@@ -1,20 +1,43 @@
 [gd_scene format=3 uid="uid://b65wqix0x1nfk"]
 
-[ext_resource type="Texture2D" uid="uid://b55nn565lccc5" path="res://assets/temp_assets/template1_chart1.png" id="1_vxmkm"]
+[ext_resource type="Script" uid="uid://bojbgjc1ff13x" path="res://ui/chart.gd" id="1_kx8nj"]
+[ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="1_vxmkm"]
+[ext_resource type="FontFile" uid="uid://mhwbtf0ht22a" path="res://assets/ui/Newsreader-VariableFont_opsz,wght.ttf" id="2_kpd25"]
 
-[node name="Chart" type="Control" unique_id=59958713]
-layout_mode = 3
+[sub_resource type="LabelSettings" id="LabelSettings_vxmkm"]
+font = ExtResource("2_kpd25")
+font_size = 63
+
+[node name="Chart" type="PanelContainer" unique_id=845714462]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kx8nj")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1017940880]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=589578573]
+layout_mode = 2
+texture = ExtResource("1_vxmkm")
+region_rect = Rect2(-0.08799744, 0, 64.088, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect" unique_id=136640622]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_vxmkm")
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer" unique_id=1747453533]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Day 1
+2 Actions Left"
+label_settings = SubResource("LabelSettings_vxmkm")
+horizontal_alignment = 1

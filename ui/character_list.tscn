@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dydc1w3qv0uqu"]
 
-[ext_resource type="Script" path="res://ui/character_list.gd" id="1_mj0st"]
+[ext_resource type="Script" uid="uid://coneko1iqfmhe" path="res://ui/screens/character_list.gd" id="1_mj0st"]
 [ext_resource type="Texture2D" uid="uid://j0kjmkm3df4l" path="res://assets/temp_assets/template1_mapdialogue1.png" id="2_cnqg3"]
+
 
 [node name="CharacterList" type="Control" unique_id=1744399672]
 layout_mode = 3

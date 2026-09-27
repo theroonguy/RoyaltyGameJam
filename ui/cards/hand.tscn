@@ -1,13 +1,35 @@
 [gd_scene format=3 uid="uid://dxni1mr7iaopm"]
 
 [ext_resource type="Script" uid="uid://3lw8fgvjufk8" path="res://ui/cards/hand.gd" id="1_7o6lk"]
+[ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="2_sea2p"]
 
-[node name="Hand" type="Control" unique_id=19865066]
-layout_mode = 3
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ylsh"]
+
+[node name="Hand" type="PanelContainer" unique_id=767111268]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 739.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4ylsh")
 script = ExtResource("1_7o6lk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=716341888]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_sea2p")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2088833861]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1807843092]
+layout_mode = 2
+theme_override_constants/separation = 20

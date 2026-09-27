@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://brd3gd2o0el3y"]
 
-[ext_resource type="StyleBox" uid="uid://dkt2nr5hiukxq" path="res://assets/ui/main_box.tres" id="1_61tb6"]
 [ext_resource type="Script" uid="uid://c3egab7s5rthr" path="res://ui/screens/dialogue_screen.gd" id="1_orrrm"]
 [ext_resource type="PackedScene" uid="uid://dd2qq428tyqe0" path="res://ui/dialogue/dialogue_region.tscn" id="1_u3e2o"]
+[ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="2_mg40o"]
 [ext_resource type="Texture2D" uid="uid://b5aqq0t3ognqx" path="res://characters/emperor/Emperor Default.png" id="2_pu40k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ylsh"]
 
 [node name="DialogueScreen" type="PanelContainer" unique_id=1329811230]
 anchors_preset = 15
@@ -13,8 +15,17 @@ offset_right = -539.0
 offset_bottom = -400.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("1_61tb6")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4ylsh")
 script = ExtResource("1_orrrm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=616451966]
+layout_mode = 2
+texture = ExtResource("2_mg40o")
+region_rect = Rect2(-0.08799744, 0, 64.088, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=97194669]
 layout_mode = 2
@@ -25,6 +36,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer" unique_id=920431834]
 layout_mode = 2
+dragging_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer" unique_id=1458607500]
 layout_mode = 2

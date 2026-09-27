@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://c2o02l5pf0gcg"]
+
+[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="1_3jkkr"]
+
+[resource]
+script = ExtResource("1_3jkkr")
+name = "Wooden Barrel"
+desc = "A small wooden barrel marked as \"Preserved Dried Fish.\""
+metadata/_custom_type_script = "uid://ok0arsecgw2i"

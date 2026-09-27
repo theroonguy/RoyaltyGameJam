@@ -9,9 +9,27 @@ enum Screen {
 	PALACE,
 	COURT,
 	WALLS,
+	ENTRANCE,
 }
 var current_screen: Screen = Screen.MAP
 var last_location: Screen
+
+enum DayCycle {
+	DAY,
+	NIGHT,
+}
+var current_day_cycle: DayCycle = DayCycle.DAY:
+	set(new_val):
+		current_day_cycle = new_val
+		time_changed.emit(new_val)
+
+var actions_left: int = 4:
+	set(new_val):
+		actions_left = new_val
+		actions_updated.emit()
+var days_left: int = 3:
+	set(new_val):
+		days_left = new_val
 
 # suspicion meter -- 0 to 1, 1 being fully suspicious
 var suspicion: float = 0.0
@@ -39,10 +57,21 @@ signal card_added_to_hand(card: Card)
 signal card_removed_from_hand(card: Card)
 
 signal screen_changed(screen: Screen)
+signal player_died(text: String)
 
 signal dialogue_written(text: String, character: Character)
+signal dialogue_finished()
+signal end_dialogue()
 signal dialogue_split(text1: String, option1: Dialogue, text2: String, option2: Dialogue, character: Character)
 signal interacted_with_character(character: Character)
+signal allow_to_go_back(screen: Screen)
+signal influence_check(amount: int)
+
+signal write_status(text: String)
+
+signal time_changed(time: DayCycle)
+
+signal actions_updated()
 
 func _ready() -> void:
 	var char_resources = get_all_resources_under("characters")
@@ -77,6 +106,7 @@ func form_relationships() -> void:
 func add_card_to_hand(card: Card) -> void:
 	hand.append(card)
 	card_added_to_hand.emit(card)
+	write_status.emit(card.desc)
 	print("card added to hand: " + card.name)
 
 func use_card_on_character(card: Card, character: Character) -> void:
@@ -109,7 +139,16 @@ func change_screen(screen: Screen) -> void:
 
 func talk_to_character(character: Character) -> void:
 	last_location = current_screen
+	actions_left -= 1
 	interacted_with_character.emit(character)
+
+func kill_player(text: String) -> void:
+	print("killing player")
+	get_tree().change_scene_to_file("res://scenes/death_scene.tscn")
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await get_tree().process_frame
+	player_died.emit(text)
 
 ########## UTILITY ##########
 
@@ -229,6 +268,10 @@ func back_to_main_menu() -> void:
 func start_new_game() -> void: # at the main menu when u hit play, this runs 
 	get_tree().paused = false 
 	get_tree().change_scene_to_file(current_scene_path)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await get_tree().process_frame
+	change_screen(Screen.MOUNTAIN)
 	
 func set_current_scene_path(path: String) -> void: 
 	current_scene_path = path 

@@ -11,3 +11,5 @@ var standing: int = 0
 
 # how suspicious this character is of the player
 @export var suspicion: int = 0
+
+@export var interactions: Array[Interaction] = []

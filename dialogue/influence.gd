@@ -7,6 +7,7 @@ class_name InfluenceDialogue
 @export var needed_influence: int = 1
 
 func _run(character: Character) -> void:
+	GameManager.influence_check.emit(needed_influence)
 	var result: Array = await GameManager.card_played_on_character
 	var card: Card = result[0]
 	var c_result: Character = result[1]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://du6ab2snbhwkq"]
+
+[ext_resource type="Script" uid="uid://dpcew2ufnynu3" path="res://ui/event/event.gd" id="1_e0nh3"]
+
+[node name="Event" type="Button" unique_id=607618099]
+offset_right = 37.0
+offset_bottom = 32.0
+text = "A burlap sack"
+script = ExtResource("1_e0nh3")

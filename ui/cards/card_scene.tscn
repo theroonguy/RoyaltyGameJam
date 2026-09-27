@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctilnrt1x68ma"]
 
 [ext_resource type="Script" uid="uid://cflwum1pahvey" path="res://ui/cards/card_scene.gd" id="1_yssjy"]
+[ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="2_hjck8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu40k"]
 bg_color = Color(0.14044744, 0.14044747, 0.14044738, 1)
@@ -15,10 +16,41 @@ offset_right = -1046.0
 offset_bottom = -518.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pu40k")
 script = ExtResource("1_yssjy")
 
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1139228665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hjck8")
+region_rect = Rect2(-0.08799744, 0, 64.088, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
 [node name="Influence" type="Label" parent="." unique_id=812492044]
 layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 28.0
+
+[node name="Title" type="Label" parent="." unique_id=1887539310]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "asdasd"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

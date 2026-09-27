@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c0v3t6de6foii"]
+
+[node name="Choice" type="Button" unique_id=121054317]
+custom_maximum_size = Vector2(100, 50)
+offset_right = 100.0
+offset_bottom = 50.0
+text = "asdasdas"

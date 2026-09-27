@@ -41,4 +41,5 @@ func _on_option_chosen(option: Dialogue, character: Character) -> void:
 	option.run(character)
 	
 	for button in buttons:
-		button.queue_free()
+		if button:
+			button.queue_free()

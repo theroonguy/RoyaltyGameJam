@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cv7y3kfee3ccc"]
+
+[ext_resource type="FontFile" uid="uid://mhwbtf0ht22a" path="res://assets/ui/Newsreader-VariableFont_opsz,wght.ttf" id="1_3idvb"]
+[ext_resource type="Script" uid="uid://djx5p6opmtax1" path="res://scenes/death_scene.gd" id="1_o2qfb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptv5y"]
+bg_color = Color(0.083392, 0.08339202, 0.08339197, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ylsh"]
+font = ExtResource("1_3idvb")
+font_size = 113
+
+[sub_resource type="LabelSettings" id="LabelSettings_vcjmr"]
+font = ExtResource("1_3idvb")
+font_size = 40
+
+[node name="DeathScene" type="PanelContainer" unique_id=722587224]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ptv5y")
+script = ExtResource("1_o2qfb")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1950212923]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1810158507]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1522511068]
+unique_name_in_owner = true
+layout_mode = 2
+text = "You died."
+label_settings = SubResource("LabelSettings_4ylsh")
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1944941805]
+unique_name_in_owner = true
+layout_mode = 2
+text = "You died."
+label_settings = SubResource("LabelSettings_vcjmr")
+horizontal_alignment = 1

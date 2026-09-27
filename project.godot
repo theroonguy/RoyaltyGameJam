@@ -24,8 +24,19 @@ GameManager="*uid://643kcoyd3gb"
 
 window/size/viewport_width=1440
 window/size/viewport_height=1080
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://cards/": "red",
+"res://characters/": "orange",
+"res://dialogue/": "yellow",
+"res://scenes/": "green",
+"res://ui/": "teal"
+}
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"

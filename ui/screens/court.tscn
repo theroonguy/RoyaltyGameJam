@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c5yr60o4qvua0"]
+
+[ext_resource type="Script" uid="uid://coneko1iqfmhe" path="res://ui/screens/character_list.gd" id="1_fdejs"]
+[ext_resource type="PackedScene" uid="uid://hmtbkg5gav52" path="res://ui/characters/character_button.tscn" id="2_i30dq"]
+[ext_resource type="Resource" uid="uid://ds2vmwv6nq232" path="res://characters/eunuch/eunuch.tres" id="3_pdkiw"]
+[ext_resource type="Resource" uid="uid://dw5sshfv22okn" path="res://characters/consort_li/consort_li.tres" id="4_viybm"]
+[ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="5_oh7gt"]
+
+[node name="Court" type="Control" unique_id=1744399672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -533.0
+offset_bottom = -418.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fdejs")
+location = 4
+
+[node name="CharacterButton" parent="." unique_id=1083688175 instance=ExtResource("2_i30dq")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 79.0
+offset_top = 124.0
+offset_right = 379.0
+offset_bottom = 524.0
+grow_horizontal = 1
+grow_vertical = 1
+character = ExtResource("3_pdkiw")
+
+[node name="CharacterButton2" parent="." unique_id=267605972 instance=ExtResource("2_i30dq")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 435.0
+offset_top = 124.0
+offset_right = 735.0
+offset_bottom = 524.0
+grow_horizontal = 1
+grow_vertical = 1
+character = ExtResource("4_viybm")
+
+[node name="GoBack" type="Button" parent="." unique_id=156790704]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -105.0
+offset_right = 180.0
+offset_bottom = -21.0
+grow_vertical = 0
+text = "back"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=968165702]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_oh7gt")
+region_rect = Rect2(-0.08799744, 0, 64.088, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]

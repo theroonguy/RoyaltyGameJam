@@ -14,6 +14,7 @@ func write_text(text: String) -> void:
 	
 	for i in text:
 		label.text += i
-		await get_tree().create_timer(0.05).timeout
+		await get_tree().create_timer(0.01).timeout
 	
 	finished.emit()
+	GameManager.dialogue_finished.emit()

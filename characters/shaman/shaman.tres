@@ -3,29 +3,64 @@
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_f35ij"]
 [ext_resource type="Texture2D" uid="uid://bcqjcxegwg8pr" path="res://characters/shaman/Shaman Default.png" id="1_k6130"]
 [ext_resource type="Resource" uid="uid://diy63ryrjj65u" path="res://cards/shaman.tres" id="1_li1y7"]
+[ext_resource type="Script" uid="uid://07wi776s8fse" path="res://dialogue/allow_back.gd" id="1_req0b"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="2_e3ykk"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="3_fcw2k"]
+[ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="5_7fusv"]
+[ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="6_hyjo1"]
+[ext_resource type="Script" uid="uid://c6unjfsym1itq" path="res://dialogue/dialogue.gd" id="7_c4ju4"]
 
-[sub_resource type="Resource" id="Resource_1vy1i"]
+[sub_resource type="Resource" id="Resource_li1y7"]
 script = ExtResource("2_e3ykk")
 card = ExtResource("1_li1y7")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
+[sub_resource type="Resource" id="Resource_5n22f"]
+script = ExtResource("1_req0b")
+screen = 2
+next = SubResource("Resource_li1y7")
+metadata/_custom_type_script = "uid://07wi776s8fse"
+
+[sub_resource type="Resource" id="Resource_e3ykk"]
+script = ExtResource("3_fcw2k")
+text = "Use your connections wisely before they dry up. All it takes it playing the wrong card to lose your life.
+
+Take this letter and deliver it to Consort Li. She will know what to do."
+next = SubResource("Resource_5n22f")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
 [sub_resource type="Resource" id="Resource_lu4u5"]
 script = ExtResource("3_fcw2k")
-text = "here's my number in case you ever need it"
-next = SubResource("Resource_1vy1i")
+text = "You have the face, the posture. You just may have what it takes to gain the Emperor's trust and get close enough to his throat. But it won't be easy; you only have 3 days before you're bound to be caught."
+next = SubResource("Resource_e3ykk")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_oi53t"]
 script = ExtResource("3_fcw2k")
-text = "why hello there. you're the chosen one i know it! isn't that amazing."
+text = "15 years... a fire in the night was all it took to lose the precious [protagonist name]. They looked under every stone, and atop every peak. But they never thought to look across the border."
 next = SubResource("Resource_lu4u5")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_cyt25"]
+script = ExtResource("3_fcw2k")
+text = "Ah, yes, I have seen these crossing the boundaries of this Kingdom under even the most watchful eyes.."
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_6adrn"]
+script = ExtResource("7_c4ju4")
+next = SubResource("Resource_cyt25")
+metadata/_custom_type_script = "uid://c6unjfsym1itq"
+
+[sub_resource type="Resource" id="Resource_ulx81"]
+script = ExtResource("5_7fusv")
+card = ExtResource("6_hyjo1")
+dialogue = SubResource("Resource_6adrn")
+metadata/_custom_type_script = "uid://dxba5rqbtyoxw"
 
 [resource]
 script = ExtResource("1_f35ij")
 name = "Shaman"
 dialogue = SubResource("Resource_oi53t")
 pic = ExtResource("1_k6130")
+interactions = Array[ExtResource("5_7fusv")]([SubResource("Resource_ulx81")])
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

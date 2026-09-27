@@ -2,9 +2,88 @@
 
 [ext_resource type="Texture2D" uid="uid://ccwnu8cnoyrvj" path="res://characters/consort_li/Consort Li Default.png" id="1_g0bqd"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_hv7p1"]
+[ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="1_lonjp"]
+[ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_42yqo"]
+[ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="3_fatta"]
+[ext_resource type="Script" uid="uid://bhhgcakh2ani4" path="res://dialogue/test_suspicion.gd" id="3_xtrql"]
+[ext_resource type="Script" uid="uid://bwpwtdqlrhk50" path="res://dialogue/add_suspicion.gd" id="4_cnw7j"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="6_cnw7j"]
+[ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="7_466ta"]
+
+[sub_resource type="Resource" id="Resource_o2qfb"]
+script = ExtResource("1_lonjp")
+text = "deaththth"
+metadata/_custom_type_script = "uid://cqduvc147h3nv"
+
+[sub_resource type="Resource" id="Resource_nbd7y"]
+script = ExtResource("2_42yqo")
+text = "i'm gonna kill you so bad"
+next = SubResource("Resource_o2qfb")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_pm768"]
+script = ExtResource("2_42yqo")
+text = "you're off the hook... for now..."
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_xfib6"]
+script = ExtResource("3_xtrql")
+success = SubResource("Resource_pm768")
+failure = SubResource("Resource_nbd7y")
+metadata/_custom_type_script = "uid://bhhgcakh2ani4"
+
+[sub_resource type="Resource" id="Resource_a0t00"]
+script = ExtResource("2_42yqo")
+text = "anyways... you should go"
+next = SubResource("Resource_xfib6")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_4tldc"]
+script = ExtResource("2_42yqo")
+text = "okay... why are you here then?"
+next = SubResource("Resource_a0t00")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_3ea82"]
+script = ExtResource("2_42yqo")
+text = "bit straight forward, don't you think?"
+next = SubResource("Resource_a0t00")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_vtv1l"]
+script = ExtResource("4_cnw7j")
+next = SubResource("Resource_3ea82")
+metadata/_custom_type_script = "uid://bwpwtdqlrhk50"
+
+[sub_resource type="Resource" id="Resource_cnw7j"]
+script = ExtResource("6_cnw7j")
+text = "this definitely didn't go well."
+next = SubResource("Resource_vtv1l")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_r3q08"]
+script = ExtResource("3_fatta")
+text1 = "i'm just a nobody"
+option1 = SubResource("Resource_4tldc")
+text2 = "i'm the lost heir. that one"
+option2 = SubResource("Resource_cnw7j")
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_874mn"]
+script = ExtResource("6_cnw7j")
+text = "she seems uncertain about me."
+next = SubResource("Resource_r3q08")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_466ta"]
+script = ExtResource("2_42yqo")
+text = "who are you?"
+next = SubResource("Resource_874mn")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [resource]
 script = ExtResource("1_hv7p1")
 name = "Consort Li"
+dialogue = SubResource("Resource_466ta")
 pic = ExtResource("1_g0bqd")
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

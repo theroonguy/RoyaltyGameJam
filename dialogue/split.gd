@@ -8,3 +8,4 @@ class_name DialogueSplit
 
 func _run(character: Character) -> void:
 	GameManager.split_dialogue(text1, option1, text2, option2, character)
+	

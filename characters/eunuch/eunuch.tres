@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bhhgcakh2ani4" path="res://dialogue/test_suspicion.gd" id="2_vqerr"]
 [ext_resource type="Script" uid="uid://bwpwtdqlrhk50" path="res://dialogue/add_suspicion.gd" id="3_bywoo"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="4_xjrel"]
+[ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="5_vqerr"]
 
 [sub_resource type="Resource" id="Resource_nbd7y"]
 script = ExtResource("1_c3ppw")

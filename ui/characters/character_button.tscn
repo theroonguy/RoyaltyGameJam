@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://hmtbkg5gav52"]
 
 [ext_resource type="Script" uid="uid://cewkbnbwevptj" path="res://ui/characters/character_button.gd" id="1_crmbm"]
-[ext_resource type="StyleBox" uid="uid://dkt2nr5hiukxq" path="res://assets/ui/main_box.tres" id="1_w2eoq"]
+[ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="2_bgcso"]
 [ext_resource type="Texture2D" uid="uid://b5aqq0t3ognqx" path="res://characters/emperor/Emperor Default.png" id="3_01jep"]
 [ext_resource type="FontFile" uid="uid://mhwbtf0ht22a" path="res://assets/ui/Newsreader-VariableFont_opsz,wght.ttf" id="4_bgcso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndwhc"]
+bg_color = Color(0.07015244, 0.07015244, 0.07015241, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4ylsh"]
 font = ExtResource("4_bgcso")
 font_size = 13
 
 [node name="CharacterButton" type="Button" unique_id=1083688175]
-custom_minimum_size = Vector2(120, 200)
-custom_maximum_size = Vector2(120, 200)
+z_index = 15
+custom_minimum_size = Vector2(300, 400)
+custom_maximum_size = Vector2(300, 400)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,8 +25,23 @@ offset_right = -660.0
 offset_bottom = -440.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = ExtResource("1_w2eoq")
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndwhc")
 script = ExtResource("1_crmbm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=815820364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bgcso")
+region_rect = Rect2(-0.08799744, 0, 64.088, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1981277807]
 layout_mode = 1
@@ -37,11 +56,11 @@ layout_mode = 2
 
 [node name="Picture" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=651442963]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
 texture = ExtResource("3_01jep")
-expand_mode = 4
-stretch_mode = 5
+expand_mode = 5
+stretch_mode = 4
 
 [node name="NameLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1104845704]
 unique_name_in_owner = true
@@ -49,3 +68,6 @@ layout_mode = 2
 text = "Emperor"
 label_settings = SubResource("LabelSettings_4ylsh")
 horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

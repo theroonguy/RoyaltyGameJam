@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://doud8d5kyfst7"]
 
 [ext_resource type="Script" uid="uid://coneko1iqfmhe" path="res://ui/screens/character_list.gd" id="1_awg2b"]
-[ext_resource type="Texture2D" uid="uid://j0kjmkm3df4l" path="res://assets/temp_assets/template1_mapdialogue1.png" id="2_5n22f"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="2_awg2b"]
+[ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="3_5n22f"]
 [ext_resource type="PackedScene" uid="uid://hmtbkg5gav52" path="res://ui/characters/character_button.tscn" id="3_bx41v"]
 [ext_resource type="Resource" uid="uid://ct7qr30fbe4k6" path="res://characters/shaman/shaman.tres" id="4_awg2b"]
+
+[sub_resource type="Resource" id="Resource_p7rkb"]
+script = ExtResource("2_awg2b")
+text = "I have been sent to infiltrate the [rival kingdom]. This shaman seems particularly easy to fool."
+metadata/_custom_type_script = "uid://8ly55p71e14f"
 
 [node name="Mountains" type="Control" unique_id=1744399672]
 layout_mode = 3
@@ -13,15 +19,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_awg2b")
+dialogue_on_approach = SubResource("Resource_p7rkb")
+show_back = false
+back = 6
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=384881206]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=688403334]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5n22f")
+texture = ExtResource("3_5n22f")
+region_rect = Rect2(-0.08799744, 0, 64.088, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="CharacterButton" parent="." unique_id=1083688175 instance=ExtResource("3_bx41v")]
 layout_mode = 0
@@ -30,8 +44,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 189.0
 offset_top = 124.0
-offset_right = 309.0
-offset_bottom = 324.0
+offset_right = 489.0
+offset_bottom = 524.0
 grow_horizontal = 1
 grow_vertical = 1
 character = ExtResource("4_awg2b")

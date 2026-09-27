@@ -54,3 +54,12 @@ func select_character() -> bool:
 	#printerr("no action available")
 	
 	return true
+
+
+func _on_mouse_entered() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.1).set_trans(Tween.TRANS_SINE)
+
+func _on_mouse_exited() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.1).set_trans(Tween.TRANS_SINE)

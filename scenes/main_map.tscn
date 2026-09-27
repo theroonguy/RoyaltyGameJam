@@ -2,15 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://dxni1mr7iaopm" path="res://ui/cards/hand.tscn" id="1_1xo34"]
 [ext_resource type="PackedScene" uid="uid://brd3gd2o0el3y" path="res://ui/screens/dialogue_screen.tscn" id="1_kdyc3"]
+[ext_resource type="Script" uid="uid://dbmk8q4fxwl86" path="res://scenes/background.gd" id="1_ulx81"]
 [ext_resource type="PackedScene" uid="uid://ckixcujcpmv3m" path="res://ui/screens/palace.tscn" id="2_cyf2o"]
 [ext_resource type="PackedScene" uid="uid://b65wqix0x1nfk" path="res://ui/chart.tscn" id="2_uxg3y"]
 [ext_resource type="PackedScene" uid="uid://bldhxu8c4vlpu" path="res://ui/screens/map.tscn" id="3_4synu"]
 [ext_resource type="PackedScene" uid="uid://doud8d5kyfst7" path="res://ui/screens/mountains.tscn" id="4_64gt2"]
 [ext_resource type="PackedScene" uid="uid://duqcpdwcimgsb" path="res://ui/description.tscn" id="4_kdyc3"]
-[ext_resource type="PackedScene" uid="uid://t85pajhhskxo" path="res://ui/screens/walls.tscn" id="5_64gt2"]
+[ext_resource type="PackedScene" uid="uid://t85pajhhskxo" path="res://ui/screens/entrance.tscn" id="5_64gt2"]
+[ext_resource type="PackedScene" uid="uid://c5yr60o4qvua0" path="res://ui/screens/court.tscn" id="6_2xk3c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ylsh"]
 bg_color = Color(0.13077214, 0.13077214, 0.13077202, 1)
+
+[sub_resource type="Gradient" id="Gradient_64gt2"]
+colors = PackedColorArray(0.1005727, 0.10263861, 0.09293661, 1, 0.23579195, 0.21837547, 0.35036215, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ubaj7"]
+gradient = SubResource("Gradient_64gt2")
+fill_from = Vector2(0, 0.78347576)
+
+[sub_resource type="Gradient" id="Gradient_cyt25"]
+colors = PackedColorArray(0.66785926, 0.40781736, 0.36019936, 1, 0.62541276, 0.79242074, 0.7752113, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ulx81"]
+gradient = SubResource("Gradient_cyt25")
+fill_from = Vector2(0.12820514, 0.5840456)
 
 [node name="MainMap" type="PanelContainer" unique_id=868644424]
 anchors_preset = 15
@@ -19,6 +35,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4ylsh")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=1803066361]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_ubaj7")
+script = ExtResource("1_ulx81")
+time_of_day = 1
+day_grad = SubResource("GradientTexture2D_ulx81")
+night_grad = SubResource("GradientTexture2D_ubaj7")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1351810762]
 layout_mode = 2
@@ -65,25 +89,19 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="ChartContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1336517766]
-custom_minimum_size = Vector2(350, 450)
+[node name="Court" parent="MarginContainer/VBoxContainer/HBoxContainer/MapContainer" unique_id=918553344 instance=ExtResource("6_2xk3c")]
+visible = false
+layout_mode = 2
+
+[node name="Chart2" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=59958713 instance=ExtResource("2_uxg3y")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Chart" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ChartContainer" unique_id=358690470]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Chart"
-horizontal_alignment = 2
-
-[node name="Chart2" parent="MarginContainer/VBoxContainer/HBoxContainer/ChartContainer" unique_id=59958713 instance=ExtResource("2_uxg3y")]
-layout_mode = 2
-
 [node name="HBoxContainer2" type="HSplitContainer" parent="MarginContainer/VBoxContainer" unique_id=1211343557]
 layout_mode = 2
-theme_override_constants/separation = 50
-split_offsets = PackedInt32Array(141)
-split_offset = 141
+theme_override_constants/separation = 22
+split_offsets = PackedInt32Array(153)
+split_offset = 153
 
 [node name="Hand" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1505745457 instance=ExtResource("1_1xo34")]
 layout_mode = 2

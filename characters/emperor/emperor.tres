@@ -2,42 +2,32 @@
 
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_1tr3f"]
 [ext_resource type="Texture2D" uid="uid://b5aqq0t3ognqx" path="res://characters/emperor/Emperor Default.png" id="1_hr512"]
+[ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="1_yogio"]
 [ext_resource type="Script" uid="uid://c803clvbsiok0" path="res://dialogue/influence.gd" id="2_lulnr"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="4_1nsh7"]
+[ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="4_40exd"]
 
-[sub_resource type="Resource" id="Resource_diayr"]
+[sub_resource type="Resource" id="Resource_dws4u"]
+script = ExtResource("1_yogio")
+text = "You lacked the influence."
+metadata/_custom_type_script = "uid://cqduvc147h3nv"
+
+[sub_resource type="Resource" id="Resource_n6xo6"]
 script = ExtResource("4_1nsh7")
-text = "time for you to die"
+text = "Who do you think you are, coming up to me like this?"
+next = SubResource("Resource_dws4u")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
-[sub_resource type="Resource" id="Resource_8tmwt"]
-script = ExtResource("4_1nsh7")
-text = "you're the best"
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_buo7l"]
+[sub_resource type="Resource" id="Resource_hjck8"]
 script = ExtResource("2_lulnr")
-success = SubResource("Resource_8tmwt")
-failure = SubResource("Resource_diayr")
-needed_influence = 2
+failure = SubResource("Resource_n6xo6")
+needed_influence = 4
 metadata/_custom_type_script = "uid://c803clvbsiok0"
-
-[sub_resource type="Resource" id="Resource_hsb8p"]
-script = ExtResource("4_1nsh7")
-text = "my name is skyler white yo"
-next = SubResource("Resource_buo7l")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
-
-[sub_resource type="Resource" id="Resource_gl2vs"]
-script = ExtResource("4_1nsh7")
-text = "here's the thing bro"
-next = SubResource("Resource_hsb8p")
-metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [resource]
 script = ExtResource("1_1tr3f")
 name = "Emperor"
-dialogue = SubResource("Resource_gl2vs")
+dialogue = SubResource("Resource_hjck8")
 pic = ExtResource("1_hr512")
 suspicion = 2
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

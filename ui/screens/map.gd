@@ -20,7 +20,7 @@ func _on_outer_palace_button_pressed() -> void:
 
 
 func _on_walls_button_pressed() -> void:
-	GameManager.change_screen(GameManager.Screen.WALLS)
+	GameManager.change_screen(GameManager.Screen.ENTRANCE)
 
 
 func _on_mountains_button_pressed() -> void:
