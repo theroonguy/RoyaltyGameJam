@@ -1,14 +1,59 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://i68fhjgevimt"]
 
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="1_4kg80"]
+[ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="1_64xf2"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="1_c33si"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="2_1hgpb"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="2_5s0q1"]
 [ext_resource type="Texture2D" uid="uid://bfrxep6nn3ui4" path="res://characters/empress/Empress Default.png" id="2_hlvpr"]
+[ext_resource type="Script" uid="uid://c803clvbsiok0" path="res://dialogue/influence.gd" id="3_03vy3"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="4_ntoiu"]
+
+[sub_resource type="Resource" id="Resource_qm7lt"]
+script = ExtResource("1_64xf2")
+metadata/_custom_type_script = "uid://cqduvc147h3nv"
+
+[sub_resource type="Resource" id="Resource_bic83"]
+script = ExtResource("1_c33si")
+text = "Cruel, filthy imposter. You’ve taken advantage of a moment of weakness to try to impersonate my dear lost daughter, and for that, you’ll pay the price."
+next = SubResource("Resource_qm7lt")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_ghfw3"]
+script = ExtResource("1_c33si")
+text = "My daughter… it truly is you. You’ve come back! At last! My daily nightmares of that day, and you’ve finally come back to us. Oh, how I’ve missed you so. Please, go meet your father."
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_nkinp"]
+script = ExtResource("3_03vy3")
+success = SubResource("Resource_ghfw3")
+failure = SubResource("Resource_bic83")
+needed_influence = 5
+metadata/_custom_type_script = "uid://c803clvbsiok0"
+
+[sub_resource type="Resource" id="Resource_k6pcn"]
+script = ExtResource("4_ntoiu")
+text = "The Empress needs convincing! Use your connections as your leverage, and do it FAST! "
+next = SubResource("Resource_nkinp")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_fkxye"]
+script = ExtResource("1_c33si")
+text = "I’m not sure I should believe you."
+next = SubResource("Resource_k6pcn")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_jn0qw"]
+script = ExtResource("1_c33si")
+text = "I felt a calling… and seeing you, I feel a familiar sense of belonging."
+from_player = true
+next = SubResource("Resource_fkxye")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_1j7bm"]
 script = ExtResource("1_c33si")
 text = "Why have you returned?"
+next = SubResource("Resource_jn0qw")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_y1yqk"]
@@ -24,11 +69,76 @@ text = "Name it. But reveal your identity. You seem... familiar. I need to know 
 next = SubResource("Resource_y1yqk")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
+[sub_resource type="Resource" id="Resource_mdwk1"]
+script = ExtResource("4_ntoiu")
+text = "The Empress needs convincing! Use your connections as your leverage! "
+next = SubResource("Resource_nkinp")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_u4xvn"]
+script = ExtResource("1_c33si")
+text = "I'm not sure I should believe you. "
+next = SubResource("Resource_mdwk1")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_54oxg"]
+script = ExtResource("1_c33si")
+text = "I felt a calling… and seeing you, I feel a familiar sense of belonging."
+from_player = true
+next = SubResource("Resource_u4xvn")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_iri43"]
+script = ExtResource("1_c33si")
+text = "Why have you returned?"
+next = SubResource("Resource_54oxg")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_o05mc"]
+script = ExtResource("4_ntoiu")
+text = "The Empress needs convincing! Use your connections as your leverage!"
+next = SubResource("Resource_nkinp")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_d76e3"]
+script = ExtResource("1_c33si")
+text = "I’m not sure I should believe you."
+next = SubResource("Resource_o05mc")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_38wlk"]
+script = ExtResource("1_c33si")
+text = "I recall a grand fire, although I do not recall the events thereafter."
+from_player = true
+next = SubResource("Resource_d76e3")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_bh0yi"]
+script = ExtResource("1_c33si")
+text = "And anything of a fire?"
+next = SubResource("Resource_38wlk")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_j0s2u"]
+script = ExtResource("2_1hgpb")
+text1 = "I do not have much memory of my past. I only remember a fire in the early stages of my youth, but I was raised by a rural family in the mountainside."
+option1 = SubResource("Resource_iri43")
+text2 = "I was adopted by a foster family, but I clearly remember my roots in this kingdom."
+option2 = SubResource("Resource_bh0yi")
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_pb8vf"]
+script = ExtResource("1_c33si")
+text = "What do you remember of your past? "
+next = SubResource("Resource_j0s2u")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
 [sub_resource type="Resource" id="Resource_f1ljg"]
 script = ExtResource("2_1hgpb")
 text1 = "I do have information... but only for a price."
 option1 = SubResource("Resource_jknef")
 text2 = "What... do you want to know?"
+option2 = SubResource("Resource_pb8vf")
 metadata/_custom_type_script = "uid://uc8ep36gysp7"
 
 [sub_resource type="Resource" id="Resource_y7xir"]

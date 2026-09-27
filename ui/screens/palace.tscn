@@ -34,7 +34,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="CharacterButton2" parent="." unique_id=705038003 instance=ExtResource("3_ltw2s")]
+[node name="General" parent="." unique_id=705038003 instance=ExtResource("3_ltw2s")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -48,7 +48,7 @@ grow_vertical = 1
 scale = Vector2(0.815, 0.815)
 character = ExtResource("4_n0y2n")
 
-[node name="CharacterButton3" parent="." unique_id=1083688175 instance=ExtResource("3_ltw2s")]
+[node name="Emperor" parent="." unique_id=1083688175 instance=ExtResource("3_ltw2s")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -62,7 +62,7 @@ grow_vertical = 1
 scale = Vector2(0.815, 0.815)
 character = ExtResource("4_ltw2s")
 
-[node name="CharacterButton4" parent="." unique_id=328051560 instance=ExtResource("3_ltw2s")]
+[node name="Empress" parent="." unique_id=328051560 instance=ExtResource("3_ltw2s")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -76,7 +76,7 @@ grow_vertical = 1
 scale = Vector2(0.815, 0.815)
 character = ExtResource("6_y7xir")
 
-[node name="CharacterButton5" parent="." unique_id=2048060340 instance=ExtResource("3_ltw2s")]
+[node name="ConsortLi" parent="." unique_id=2048060340 instance=ExtResource("3_ltw2s")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0

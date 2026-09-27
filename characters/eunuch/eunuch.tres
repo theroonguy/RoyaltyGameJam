@@ -4,18 +4,25 @@
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="1_c3ppw"]
 [ext_resource type="Texture2D" uid="uid://c1xm7n4yt3aet" path="res://characters/eunuch/Eunuch Default.png" id="1_rg4qk"]
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_xfchy"]
-[ext_resource type="Resource" uid="uid://blmiphiirafj" path="res://cards/love_letter.tres" id="2_xjrel"]
+[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="2_xjrel"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="3_xdoq4"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="4_xjrel"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="5_vqerr"]
+[ext_resource type="Resource" uid="uid://beox1rt1apkq8" path="res://cards/eunuch.tres" id="7_o8ny7"]
 
 [sub_resource type="Resource" id="Resource_gdh1g"]
 script = ExtResource("1_bywoo")
 metadata/_custom_type_script = "uid://cqduvc147h3nv"
 
+[sub_resource type="Resource" id="Resource_xdoq4"]
+script = ExtResource("2_xjrel")
+name = "Love Letter"
+desc = "Eunuch Yang gave me this letter indiscreetly... I wonder what's in it?"
+metadata/_custom_type_script = "uid://ok0arsecgw2i"
+
 [sub_resource type="Resource" id="Resource_xgymu"]
 script = ExtResource("3_xdoq4")
-card = ExtResource("2_xjrel")
+card = SubResource("Resource_xdoq4")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
 [sub_resource type="Resource" id="Resource_jm8pl"]
@@ -44,9 +51,35 @@ text = "You... who are you?"
 next = SubResource("Resource_cbab0")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
+[sub_resource type="Resource" id="Resource_ww7v1"]
+script = ExtResource("3_xdoq4")
+card = ExtResource("7_o8ny7")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_sly41"]
+script = ExtResource("1_c3ppw")
+text = "Now, I have no time for idle chitchat. Hm… you seem familiar."
+next = SubResource("Resource_ww7v1")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_7qlye"]
+script = ExtResource("4_xjrel")
+text1 = "Thanks."
+option1 = SubResource("Resource_sly41")
+text2 = "Never one to pass up gossip. "
+next = SubResource("Resource_sly41")
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_vtv1l"]
+script = ExtResource("1_c3ppw")
+text = "Well, look who it is. It seems you did rather well with the information I provided you. The Empress saw me today, appearing to be in much distress."
+next = SubResource("Resource_7qlye")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
 [resource]
 script = ExtResource("1_xfchy")
 name = "Eunuch"
 dialogue = SubResource("Resource_bx41v")
+dialogue2 = SubResource("Resource_vtv1l")
 pic = ExtResource("1_rg4qk")
 metadata/_custom_type_script = "uid://hv71lve7e8qh"
