@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="14_ing14"]
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="15_ing14"]
 [ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="15_xhnjx"]
-[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="17_o4453"]
+[ext_resource type="Resource" uid="uid://bvsj35o47f42i" path="res://cards/cheaper_salt_rumor.tres" id="17_xhnjx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rbrh"]
 
@@ -38,15 +38,9 @@ They notice you, and quickly eye you. They realize you heard them."
 next = SubResource("Resource_874mn")
 metadata/_custom_type_script = "uid://8ly55p71e14f"
 
-[sub_resource type="Resource" id="Resource_4ope8"]
-script = ExtResource("17_o4453")
-name = "Cheaper Salt"
-desc = "I heard from some talk on the street that there might be an illegal source of salt on this side of town."
-metadata/_custom_type_script = "uid://ok0arsecgw2i"
-
 [sub_resource type="Resource" id="Resource_1pkbs"]
 script = ExtResource("14_ing14")
-card = SubResource("Resource_4ope8")
+card = ExtResource("17_xhnjx")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
 [sub_resource type="Resource" id="Resource_4tldc"]
@@ -131,11 +125,13 @@ theme_override_constants/separation = 50
 
 [node name="PalaceButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1750157170]
 layout_mode = 2
+tooltip_text = "The Palace"
 texture_normal = ExtResource("2_1k2ba")
 texture_hover = ExtResource("3_m8udb")
 
 [node name="OuterPalaceButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=648927663]
 layout_mode = 2
+tooltip_text = "The Outer Courts"
 texture_normal = ExtResource("4_7xb7k")
 texture_hover = ExtResource("5_dc1eh")
 
@@ -147,11 +143,13 @@ theme_override_constants/separation = 120
 
 [node name="WallsButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=780363]
 layout_mode = 2
+tooltip_text = "The Outer Walls"
 texture_normal = ExtResource("6_dc1eh")
 texture_hover = ExtResource("7_cjqc2")
 
 [node name="MountainsButton" type="TextureButton" parent="MapBackground/MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1630737459]
 layout_mode = 2
+tooltip_text = "The Mountainside"
 texture_normal = ExtResource("8_0p7vj")
 texture_hover = ExtResource("9_em20l")
 

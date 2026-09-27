@@ -27,9 +27,16 @@ var actions_left: int = 4:
 	set(new_val):
 		actions_left = new_val
 		actions_updated.emit()
+		
+		if actions_left == 0:
+			actions_left = 4
+			days_left -= 1
 var days_left: int = 3:
 	set(new_val):
 		days_left = new_val
+		
+		if days_left == 0:
+			kill_player("You ran out of time and were caught...")
 
 # suspicion meter -- 0 to 1, 1 being fully suspicious
 var suspicion: float = 0.0
@@ -55,6 +62,7 @@ signal card_played_on_character(card: Card, character: Character)
 signal card_selected(card: Card)
 signal card_added_to_hand(card: Card)
 signal card_removed_from_hand(card: Card)
+signal card_animation_finished()
 
 signal screen_changed(screen: Screen)
 signal player_died(text: String)
@@ -109,7 +117,7 @@ func add_card_to_hand(card: Card) -> void:
 	write_status.emit(card.desc)
 	print("card added to hand: " + card.name)
 
-func use_card_on_character(card: Card, character: Character) -> void:
+func use_card_on_character(card: Card, character: Character, erase: bool = true) -> void:
 	selected_card = null
 	print(card.name + " used on character: " + character.name)
 	
@@ -118,9 +126,13 @@ func use_card_on_character(card: Card, character: Character) -> void:
 	match card.name:
 		"Poison":
 			kill_character(character)
+			hand.erase(card)
+			card_removed_from_hand.emit(card)
 	
-	hand.erase(card)
-	card_removed_from_hand.emit(card)
+	if erase:
+		await card_animation_finished
+		hand.erase(card)
+		card_removed_from_hand.emit(card)
 
 func kill_character(character: Character) -> void:
 	characters.erase(character)

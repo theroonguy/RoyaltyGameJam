@@ -3,7 +3,12 @@
 [ext_resource type="Script" uid="uid://coneko1iqfmhe" path="res://ui/screens/character_list.gd" id="1_unrye"]
 [ext_resource type="PackedScene" uid="uid://hmtbkg5gav52" path="res://ui/characters/character_button.tscn" id="3_oi53t"]
 [ext_resource type="Resource" uid="uid://d21xfj5nlt5do" path="res://characters/guard/guard.tres" id="3_unrye"]
+[ext_resource type="FontFile" uid="uid://mhwbtf0ht22a" path="res://assets/ui/Newsreader-VariableFont_opsz,wght.ttf" id="5_gug6g"]
 [ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="5_vu6ll"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ylsh"]
+font = ExtResource("5_gug6g")
+font_size = 41
 
 [node name="Entrance" type="Control" unique_id=1744399672]
 layout_mode = 3
@@ -55,6 +60,17 @@ offset_top = -105.0
 offset_right = 180.0
 offset_bottom = -21.0
 grow_vertical = 0
-text = "back"
+theme_override_fonts/font = ExtResource("5_gug6g")
+theme_override_font_sizes/font_size = 18
+text = "Enter the Kingdom"
+
+[node name="Label" type="Label" parent="." unique_id=1557538775]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 24.0
+offset_right = 186.0
+offset_bottom = 66.0
+text = "Entrance"
+label_settings = SubResource("LabelSettings_4ylsh")
 
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]

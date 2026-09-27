@@ -5,14 +5,21 @@
 [ext_resource type="Resource" uid="uid://diy63ryrjj65u" path="res://cards/shaman.tres" id="1_li1y7"]
 [ext_resource type="Script" uid="uid://07wi776s8fse" path="res://dialogue/allow_back.gd" id="1_req0b"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="2_e3ykk"]
+[ext_resource type="Resource" uid="uid://dqphn3vvr8i3m" path="res://cards/letter.tres" id="2_hyjo1"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="3_fcw2k"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="5_7fusv"]
-[ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="6_hyjo1"]
+[ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="7_4euh3"]
 [ext_resource type="Script" uid="uid://c6unjfsym1itq" path="res://dialogue/dialogue.gd" id="7_c4ju4"]
+
+[sub_resource type="Resource" id="Resource_msw8j"]
+script = ExtResource("2_e3ykk")
+card = ExtResource("2_hyjo1")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
 [sub_resource type="Resource" id="Resource_li1y7"]
 script = ExtResource("2_e3ykk")
 card = ExtResource("1_li1y7")
+next = SubResource("Resource_msw8j")
 metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
 
 [sub_resource type="Resource" id="Resource_5n22f"]
@@ -53,7 +60,7 @@ metadata/_custom_type_script = "uid://c6unjfsym1itq"
 
 [sub_resource type="Resource" id="Resource_ulx81"]
 script = ExtResource("5_7fusv")
-card = ExtResource("6_hyjo1")
+card = ExtResource("7_4euh3")
 dialogue = SubResource("Resource_6adrn")
 metadata/_custom_type_script = "uid://dxba5rqbtyoxw"
 

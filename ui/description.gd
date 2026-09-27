@@ -7,6 +7,7 @@ var total_text: String = ""
 var buttons: Array = []
 const CHOICE = preload("uid://c0v3t6de6foii")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	GameManager.write_status.connect(_on_write_status)
@@ -15,6 +16,7 @@ func _ready() -> void:
 	label.text = ""
 
 func _on_write_status(text: String) -> void:
+	audio_stream_player.play()
 	# get all text and make it gray
 	label.text = "[color=dimgray]" + total_text + "[/color]"
 	label.text += "\n"
@@ -23,6 +25,7 @@ func _on_write_status(text: String) -> void:
 		label.text += i
 		total_text += i
 		await get_tree().create_timer(0.03).timeout
+	audio_stream_player.playing = false
 
 func _on_split_dialogue(text1: String, option1: Dialogue, text2: String, option2: Dialogue, character: Character) -> void:
 	if GameManager.current_screen == GameManager.Screen.DIALOGUE:

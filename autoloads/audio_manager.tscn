@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://60do40k5e6g5"]
+
+[ext_resource type="AudioStream" uid="uid://shb6yipks4ws" path="res://assets/audio/Game Jam Music.wav" id="1_tr7pb"]
+[ext_resource type="Script" uid="uid://sh6x2e5f1m3b" path="res://autoloads/audio_manager.gd" id="2_xdfsh"]
+
+[node name="AudioManager" type="AudioStreamPlayer" unique_id=1125609564]
+stream = ExtResource("1_tr7pb")
+autoplay = true
+script = ExtResource("2_xdfsh")

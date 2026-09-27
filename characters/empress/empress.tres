@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://i68fhjgevimt"]
+
+[ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="1_4kg80"]
+[ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="2_5s0q1"]
+[ext_resource type="Texture2D" uid="uid://bfrxep6nn3ui4" path="res://characters/empress/Empress Default.png" id="2_hlvpr"]
+
+[resource]
+script = ExtResource("2_5s0q1")
+name = "The Empress"
+pic = ExtResource("2_hlvpr")
+influence = 4
+suspicion = 2
+metadata/_custom_type_script = "uid://hv71lve7e8qh"

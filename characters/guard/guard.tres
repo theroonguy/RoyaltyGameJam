@@ -8,9 +8,11 @@
 [ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="4_fs7od"]
 [ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="4_qdsct"]
 [ext_resource type="Script" uid="uid://07wi776s8fse" path="res://dialogue/allow_back.gd" id="5_rxoyn"]
-[ext_resource type="Texture2D" uid="uid://c6wqse4p5wxik" path="res://icon.png" id="8_qdsct"]
+[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="8_1b0bc"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="8_ys5p2"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="9_dyyyk"]
 [ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="9_ys5p2"]
+[ext_resource type="Texture2D" uid="uid://1dieb8gsmm6v" path="res://characters/guard/Guard Default.png" id="12_1b0bc"]
 
 [sub_resource type="Resource" id="Resource_rs3f4"]
 script = ExtResource("1_445km")
@@ -64,6 +66,41 @@ text = "What brings you into this kingdom?"
 next = SubResource("Resource_j3fuk")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
+[sub_resource type="Resource" id="Resource_5644a"]
+script = ExtResource("1_445km")
+metadata/_custom_type_script = "uid://cqduvc147h3nv"
+
+[sub_resource type="Resource" id="Resource_u4vgs"]
+script = ExtResource("8_1b0bc")
+name = "The Guard's Smuggling"
+desc = "I saw the guard sneaking salt into the kingdom to make dirty money!"
+metadata/_custom_type_script = "uid://ok0arsecgw2i"
+
+[sub_resource type="Resource" id="Resource_xgymu"]
+script = ExtResource("4_qdsct")
+card = SubResource("Resource_u4vgs")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_jm8pl"]
+script = ExtResource("9_dyyyk")
+text = "I sneak behind a barrel and observe quietly. The guard is sneaking in boxes of something, and a salty smell fills the air.	"
+next = SubResource("Resource_xgymu")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_gdh1g"]
+script = ExtResource("4_fs7od")
+text1 = "Busy with what?"
+option1 = SubResource("Resource_5644a")
+text2 = "Apologies for disturbing"
+option2 = SubResource("Resource_jm8pl")
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_bx41v"]
+script = ExtResource("3_d6nw8")
+text = "Away with you! We're busy!"
+next = SubResource("Resource_gdh1g")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
 [sub_resource type="Resource" id="Resource_n6xo6"]
 script = ExtResource("3_d6nw8")
 text = "Next to my station? "
@@ -92,7 +129,8 @@ metadata/_custom_type_script = "uid://dxba5rqbtyoxw"
 script = ExtResource("1_qbjue")
 name = "Guard"
 dialogue = SubResource("Resource_qbjue")
-pic = ExtResource("8_qdsct")
+dialogue2 = SubResource("Resource_bx41v")
+pic = ExtResource("12_1b0bc")
 influence = 2
 interactions = Array[ExtResource("8_ys5p2")]([SubResource("Resource_8u10w")])
 metadata/_custom_type_script = "uid://hv71lve7e8qh"

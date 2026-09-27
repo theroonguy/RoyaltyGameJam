@@ -10,7 +10,7 @@ bg_color = Color(0.07015244, 0.07015244, 0.07015241, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4ylsh"]
 font = ExtResource("4_bgcso")
-font_size = 13
+font_size = 20
 
 [node name="CharacterButton" type="Button" unique_id=1083688175]
 z_index = 15
@@ -26,6 +26,7 @@ offset_bottom = -440.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+tooltip_text = "Approach"
 theme_override_styles/normal = SubResource("StyleBoxFlat_ndwhc")
 script = ExtResource("1_crmbm")
 

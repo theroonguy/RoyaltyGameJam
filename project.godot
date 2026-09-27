@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameManager="*uid://643kcoyd3gb"
+AudioManager="*uid://60do40k5e6g5"
 
 [display]
 

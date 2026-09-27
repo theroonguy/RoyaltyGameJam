@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="2_874mn"]
 [ext_resource type="FontFile" uid="uid://mhwbtf0ht22a" path="res://assets/ui/Newsreader-VariableFont_opsz,wght.ttf" id="2_sliwq"]
 [ext_resource type="Script" uid="uid://dgqv75l6slrjy" path="res://ui/description.gd" id="2_y5e7d"]
+[ext_resource type="AudioStream" uid="uid://ccavhm6wxxvj1" path="res://assets/audio/freesound_community-scribble-103199.mp3" id="4_874mn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2j0go"]
 
@@ -45,8 +46,14 @@ bbcode_enabled = true
 text = "[color=dimgray]this is something interestin[/color]
 interestin
 interestin"
+scroll_following = true
 vertical_alignment = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1146093788]
 layout_mode = 2
 alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=755954307]
+stream = ExtResource("4_874mn")
+volume_db = 9.437
+parameters/looping = true

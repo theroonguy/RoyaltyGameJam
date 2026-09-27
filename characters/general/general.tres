@@ -1,16 +1,64 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://dnmbpbshgh4ea"]
 
 [ext_resource type="Script" uid="uid://hv71lve7e8qh" path="res://characters/character.gd" id="1_004gg"]
+[ext_resource type="Resource" uid="uid://c7ynqrgn001t8" path="res://cards/general.tres" id="1_sic06"]
+[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="1_wglyx"]
 [ext_resource type="Script" uid="uid://dxba5rqbtyoxw" path="res://dialogue/interaction.gd" id="2_0vnuy"]
+[ext_resource type="Script" uid="uid://3qpgq1q2rc7j" path="res://dialogue/give_card.gd" id="2_8tmwt"]
 [ext_resource type="Script" uid="uid://bpr0y8ly4cyud" path="res://dialogue/text.gd" id="2_buo7l"]
-[ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="3_8tmwt"]
 [ext_resource type="Script" uid="uid://cqduvc147h3nv" path="res://dialogue/kill_player.gd" id="4_47mdg"]
 [ext_resource type="Texture2D" uid="uid://b5yq1ukc7ug5x" path="res://characters/general/General Default.png" id="4_diayr"]
 [ext_resource type="Script" uid="uid://c803clvbsiok0" path="res://dialogue/influence.gd" id="5_1woro"]
+[ext_resource type="Script" uid="uid://8ly55p71e14f" path="res://dialogue/write_status.gd" id="5_kq8pr"]
+[ext_resource type="Script" uid="uid://uc8ep36gysp7" path="res://dialogue/split.gd" id="6_4ivqm"]
+[ext_resource type="Resource" uid="uid://c2o02l5pf0gcg" path="res://cards/illicit_salt.tres" id="8_hamqk"]
 
-[sub_resource type="Resource" id="Resource_p8dox"]
+[sub_resource type="Resource" id="Resource_estwa"]
+script = ExtResource("1_wglyx")
+name = "The General's Theft"
+desc = "The gems that fell out of General Yue's pockets look awfully similar to the Empress's. It's possible he may be stealing jewels from her."
+metadata/_custom_type_script = "uid://ok0arsecgw2i"
+
+[sub_resource type="Resource" id="Resource_o3poq"]
+script = ExtResource("2_8tmwt")
+card = ExtResource("1_sic06")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_eu7qt"]
+script = ExtResource("2_8tmwt")
+card = SubResource("Resource_estwa")
+next = SubResource("Resource_o3poq")
+metadata/_custom_type_script = "uid://3qpgq1q2rc7j"
+
+[sub_resource type="Resource" id="Resource_t86mh"]
 script = ExtResource("2_buo7l")
-text = "hi"
+text = "Oh- oh no. You weren't supposed to see that. You'll stay silent, right?"
+next = SubResource("Resource_eu7qt")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_xck2r"]
+script = ExtResource("5_kq8pr")
+text = "Something colorful and shiny falls out of General Yue's pocket!"
+next = SubResource("Resource_t86mh")
+metadata/_custom_type_script = "uid://8ly55p71e14f"
+
+[sub_resource type="Resource" id="Resource_7e608"]
+script = ExtResource("2_buo7l")
+text = "We'll have to conduct a bag search if you want to proceed."
+next = SubResource("Resource_xck2r")
+metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
+
+[sub_resource type="Resource" id="Resource_hfcja"]
+script = ExtResource("6_4ivqm")
+text1 = "I'm someone passing through."
+option1 = SubResource("Resource_7e608")
+text2 = "I'm simply exploring the Kingdom."
+metadata/_custom_type_script = "uid://uc8ep36gysp7"
+
+[sub_resource type="Resource" id="Resource_1umrq"]
+script = ExtResource("2_buo7l")
+text = "Halt! What brings you to the Palace?"
+next = SubResource("Resource_hfcja")
 metadata/_custom_type_script = "uid://bpr0y8ly4cyud"
 
 [sub_resource type="Resource" id="Resource_47mdg"]
@@ -31,14 +79,14 @@ metadata/_custom_type_script = "uid://c803clvbsiok0"
 
 [sub_resource type="Resource" id="Resource_sic06"]
 script = ExtResource("2_0vnuy")
-card = ExtResource("3_8tmwt")
+card = ExtResource("8_hamqk")
 dialogue = SubResource("Resource_8tmwt")
 metadata/_custom_type_script = "uid://dxba5rqbtyoxw"
 
 [resource]
 script = ExtResource("1_004gg")
 name = "General"
-dialogue = SubResource("Resource_p8dox")
+dialogue = SubResource("Resource_1umrq")
 pic = ExtResource("4_diayr")
 influence = 2
 interactions = Array[ExtResource("2_0vnuy")]([SubResource("Resource_sic06")])

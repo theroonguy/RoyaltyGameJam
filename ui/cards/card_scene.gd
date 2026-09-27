@@ -35,7 +35,20 @@ func select_card() -> void:
 	
 	# TODO make selection box
 	GameManager.selected_card = card
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.2, 1.2), 0.1)
 	print("selected card: " + card.name)
+	
+	var result = await GameManager.card_played_on_character
+	var past_pos = global_position
+	top_level = true
+	await get_tree().process_frame
+	global_position = past_pos
+	tween = create_tween()
+	tween.tween_property(self, "global_position", Vector2(200, 200), 0.5)
+	await tween.finished
+	
+	GameManager.card_animation_finished.emit()
 
 func _on_mouse_entered() -> void:
 	var tween = create_tween()

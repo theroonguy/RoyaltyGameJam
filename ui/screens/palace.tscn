@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://daq1xwmqrlcjt" path="res://characters/emperor/emperor.tres" id="4_ltw2s"]
 [ext_resource type="Resource" uid="uid://dnmbpbshgh4ea" path="res://characters/general/general.tres" id="4_n0y2n"]
 [ext_resource type="Texture2D" uid="uid://b0gkh77da804g" path="res://assets/ui/border.png" id="5_ltw2s"]
+[ext_resource type="Resource" uid="uid://i68fhjgevimt" path="res://characters/empress/empress.tres" id="6_y7xir"]
 
 [node name="Palace" type="Control" unique_id=1744399672]
 layout_mode = 3
@@ -17,44 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mbrh5")
 location = 3
-
-[node name="CharacterButton2" parent="." unique_id=705038003 instance=ExtResource("3_ltw2s")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 381.0
-offset_top = 45.0
-offset_right = 681.0
-offset_bottom = 445.0
-grow_horizontal = 1
-grow_vertical = 1
-character = ExtResource("4_n0y2n")
-
-[node name="CharacterButton3" parent="." unique_id=1083688175 instance=ExtResource("3_ltw2s")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 58.0
-offset_top = 44.0
-offset_right = 358.0
-offset_bottom = 444.0
-grow_horizontal = 1
-grow_vertical = 1
-character = ExtResource("4_ltw2s")
-
-[node name="GoBack" type="Button" parent="." unique_id=32395191]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 23.0
-offset_top = -105.0
-offset_right = 180.0
-offset_bottom = -21.0
-grow_vertical = 0
-text = "back"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2126907276]
 layout_mode = 1
@@ -69,5 +32,59 @@ patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
+
+[node name="CharacterButton2" parent="." unique_id=705038003 instance=ExtResource("3_ltw2s")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 522.0
+offset_top = 21.0
+offset_right = 822.0
+offset_bottom = 421.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.815, 0.815)
+character = ExtResource("4_n0y2n")
+
+[node name="CharacterButton3" parent="." unique_id=1083688175 instance=ExtResource("3_ltw2s")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 18.000008
+offset_top = 17.0
+offset_right = 318.0
+offset_bottom = 417.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.815, 0.815)
+character = ExtResource("4_ltw2s")
+
+[node name="CharacterButton4" parent="." unique_id=328051560 instance=ExtResource("3_ltw2s")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 268.0
+offset_top = 19.000004
+offset_right = 568.0
+offset_bottom = 419.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.815, 0.815)
+character = ExtResource("6_y7xir")
+
+[node name="GoBack" type="Button" parent="." unique_id=32395191]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -105.0
+offset_right = 180.0
+offset_bottom = -21.0
+grow_vertical = 0
+text = "back"
 
 [connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]

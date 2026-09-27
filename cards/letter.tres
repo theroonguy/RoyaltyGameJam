@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://dqphn3vvr8i3m"]
+
+[ext_resource type="Script" uid="uid://ok0arsecgw2i" path="res://cards/card.gd" id="1_kl7yn"]
+
+[resource]
+script = ExtResource("1_kl7yn")
+name = "Letter"
+desc = "A letter given to me by the Shaman, dedicated to Consort Li."
+metadata/_custom_type_script = "uid://ok0arsecgw2i"
