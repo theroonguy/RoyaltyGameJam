@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://qtpx4a8hqi0x"]
+
+[ext_resource type="Script" path="res://ui/characters/character_list.gd" id="1_mj0st"]
+[ext_resource type="Texture2D" uid="uid://j0kjmkm3df4l" path="res://assets/temp_assets/template1_mapdialogue1.png" id="2_cnqg3"]
+[ext_resource type="Texture2D" uid="uid://bpu1a80c2r2a8" path="res://assets/temp_assets/template1_goback1.png" id="3_4j30p"]
+
+[node name="CharacterList2" type="Control" unique_id=1744399672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mj0st")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=384881206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cnqg3")
+
+[node name="GoBackButton" type="TextureButton" parent="." unique_id=1056404559]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+texture_normal = ExtResource("3_4j30p")
+
+[connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]

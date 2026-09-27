@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c0j5ia3lk6p7i"]
+
+[ext_resource type="Script" path="res://ui/cards/temp_card_game.gd" id="1_2twdx"]
+[ext_resource type="Texture2D" uid="uid://b813cjk5idk6h" path="res://assets/temp_assets/template1_cardhands1.png" id="2_bql27"]
+[ext_resource type="Script" path="res://ui/cards/temp_hand.gd" id="3_bql27"]
+
+[node name="TempCardGame" type="Control" unique_id=1505745457]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2twdx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=979290481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bql27")
+
+[node name="TempBG" type="ColorRect" parent="." unique_id=764037867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeckHand" type="ColorRect" parent="." unique_id=792440246]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -420.5
+offset_top = -163.0
+offset_right = 420.5
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_bql27")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=773769335]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1985704013]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 30)
+offset_transform_scale = Vector2(2, 2)
+
+[node name="DrawCard" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1370687685]
+layout_mode = 2
+text = "DRAW CARD"
+
+[node name="ResetCard" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1068049536]
+layout_mode = 2
+text = "RESET CARD"
+
+[node name="DiscardCard" type="Button" parent="MarginContainer/HBoxContainer" unique_id=871300751]
+layout_mode = 2
+text = "DISCARD CARD"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DrawCard" to="." method="_on_draw_card_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ResetCard" to="." method="_on_reset_card_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DiscardCard" to="." method="_on_discard_card_pressed"]
